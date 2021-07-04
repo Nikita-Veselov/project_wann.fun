@@ -41,7 +41,7 @@ class LinkController extends Controller
     public function store(CreateLink $request)
     {
         $input = $request->all();
-        $input['input_url'] =  'https://wann.fun/link/' . $request->input_url . '_'. Str::random(4);
+        $input['input_url'] =  'https://wann.fun/' . $request->input_url . '_'. Str::random(4);
         $input['user_id'] = 'guest';
 
         $link = Link::create($input);

@@ -26,7 +26,7 @@ Route::get('/admin', function () {
     return view('admin');
 });
 
-Route::get('/link/{any?}', [LinkController::class, 'show'])->where('any', '.*');
+Route::get('/{any?}', [LinkController::class, 'show'])->where('any', '.*');
 
 
 
