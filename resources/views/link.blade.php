@@ -21,7 +21,7 @@
         <nav class="navbar navbar-light bg-light static-top navbar-gradient">
             <div class="container container-md">
                 <a class="navbar-brand navbar-brand-font" href="#!">Wannfun</a>
-                <div class="row">
+                {{-- <div class="row">
                     <!-- Login form -->
                     <div class="col-6 dropdown">
                         <button 
@@ -87,12 +87,12 @@
                         </div>
 
                     </div>
-                </div>
+                </div> --}}
             </div>
         </nav>
 
         <!-- Main-->
-        <header class="masthead">
+        <header class="masthead" style="background: url('{{ asset('assets/img/bg-masthead.jpg') }}') no-repeat center center">
             <div class="container position-relative">
                 <div class="row justify-content-center">
                     <div class="col-xl-6">
