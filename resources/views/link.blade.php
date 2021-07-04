@@ -99,7 +99,12 @@
                         <div class="text-center text-white">
                             <!-- Page heading-->
                             <h1 class="custom-font mb-5">Create your new short URL!</h1>
-                            
+
+                            @if(session()->has('success'))
+                                <div class="alert alert-success">{{ session()->get('success') }}</div>
+                                <div class="alert alert-info">{{ session()->get('url') }}</div>
+                            @endif
+
                             @if($errors->any())
                                 @foreach ($errors->all() as $error)
                                     <div class="alert alert-danger">{{ $error }}</div>
@@ -123,8 +128,9 @@
 
                                     <select name="input_url">
                                         <option><div class="active">date_me</div></option>
+                                        <option><div class="">kiss_me</div></option>
                                         <option><div class="">wanna_date_me</div></option>
-                                        <option><div class="">me_to_date</div></option>
+                                        <option><div class="">date_me_then</div></option>
                                         <option><div class="">please_date_me</div></option>
                                         <option><div class="">date_4_me</div></option>
                                     </select>

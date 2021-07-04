@@ -41,17 +41,19 @@ class LinkController extends Controller
     public function store(CreateLink $request)
     {
         $input = $request->all();
-        $input['input_url'] =  'https://wann.fun/' . $request->input_url . '_'. Str::random(4);
+        $input['input_url'] =  'https://wann.fun/' . $request->input_url . '_'. Str::random(5);
         $input['user_id'] = 'guest';
 
-        $link = Link::create($input);
-
-        if($link) {
-            return back()
-            ->with('success', 'Report addition success');
+        
+        // dd($link);
+        if(Link::create($input)) {
+            return redirect()->route('link')->with([
+                'success'=> 'Link created successfully!',
+                'url' => $input["input_url"]
+            ]);
         }
     
-        return back()->with('error', 'Report addition error');
+        return back()->with('error', 'Creation error');
     }
 
     /**
