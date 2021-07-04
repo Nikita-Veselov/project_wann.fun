@@ -5,10 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateLink;
 use App\Models\Link;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
-use function GuzzleHttp\Promise\all;
 use function PHPUnit\Framework\isEmpty;
-use function PHPUnit\Framework\isNull;
 
 class LinkController extends Controller
 {
@@ -42,9 +41,9 @@ class LinkController extends Controller
     public function store(CreateLink $request)
     {
         $input = $request->all();
-        $input['input_url'] =  'https://wann.fun/link/' . $request->input_url . '_123';
+        $input['input_url'] =  'https://wann.fun/link/' . $request->input_url . '_'. Str::random(4);
         $input['user_id'] = 'guest';
-        
+
         $link = Link::create($input);
 
         if($link) {
