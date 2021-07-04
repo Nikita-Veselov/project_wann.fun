@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\LinkController;
-use App\Http\Controllers\RedirectController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::get('/', function () {
+    return view('link');
+})->name('link');
 
 Route::resource('/link', LinkController::class);
 
@@ -24,6 +27,7 @@ Route::get('/admin', function () {
 });
 
 Route::get('/link/{any?}', [LinkController::class, 'show'])->where('any', '.*');
+
 
 
 
