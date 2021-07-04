@@ -119,8 +119,8 @@
                                     <input 
                                         class="form-control custom-font" 
                                         type="text" 
-                                        placeholder="Enter your URL" 
-                                        aria-label="Enter your URL" 
+                                        placeholder="Enter your URL (e.g. http://google.com)" 
+                                        aria-label="Enter your URL (e.g. http://google.com)" 
                                         aria-describedby="button-submit" 
                                         id="url-form"
                                         name="output_url"
