@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LinkController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -22,9 +23,9 @@ Route::get('/', function () {
 
 Route::resource('/link', LinkController::class);
 
-Route::get('/admin', function () {
-    return view('admin');
-});
+Route::get('/profile', [UserController::class, 'auth'
+])->name('profile'); 
+// ->middleware('auth')
 
 Route::get('/{any?}', [LinkController::class, 'show'])->where('any', '.*');
 

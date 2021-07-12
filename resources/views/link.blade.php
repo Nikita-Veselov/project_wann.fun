@@ -21,7 +21,7 @@
         <nav class="navbar navbar-light bg-light static-top navbar-gradient">
             <div class="container container-md">
                 <a class="navbar-brand navbar-brand-font" href="#!">Wannfun</a>
-                {{-- <div class="row">
+                <div class="row">
                     <!-- Login form -->
                     <div class="col-6 dropdown">
                         <button 
@@ -36,14 +36,15 @@
 
                         <div 
                             class="dropdown-menu dropdown-menu-md-end dropdown-menu-start">
-                            <form class="px-4 py-3" style="width: 15rem;">
+                            <form class="px-4 py-3" style="width: 15rem;" action="{{ route('profile') }}">
+                                @csrf
                                 <div class="mb-3">
-                                    <label for="DropdownFormLogin" class="form-label">Login</label>
-                                    <input type="email" class="form-control" name="DropdownFormLogin" placeholder="Login">
+                                    <label for="login" class="form-label">Login</label>
+                                    <input type="email" class="form-control" name="email" placeholder="Login">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="DropdownFormPassword" class="form-label">Password</label>
-                                    <input type="password" class="form-control" name="DropdownFormPassword" placeholder="Password">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" class="form-control" name="password" placeholder="Password">
                                 </div>
                                 <div class="mb-3">
                                     <div class="form-check">
@@ -59,7 +60,6 @@
                             <a class="dropdown-item" href="#">Forgot password?</a>
                         </div>
                     </div>
-
                     <!-- Registration form -->
                     <div class="col-6 dropdown">
                         <button 
@@ -87,7 +87,7 @@
                         </div>
 
                     </div>
-                </div> --}}
+                </div>
             </div>
         </nav>
 
