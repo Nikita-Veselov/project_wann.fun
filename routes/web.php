@@ -21,6 +21,10 @@ Route::get('/', function () {
     return view('link');
 })->name('link');
 
+Route::get('/away', function () {
+    return view('link');
+})->name('away');
+
 Route::resource('/link', LinkController::class);
 
 Route::get('/profile', [UserController::class, 'auth'

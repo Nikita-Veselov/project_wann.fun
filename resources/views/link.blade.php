@@ -22,11 +22,11 @@
             <div class="container container-md">
                 <a class="navbar-brand navbar-brand-font" href="#!">Wannfun</a>
                 <div class="row">
+
                     <!-- Login form -->
                     <div class="col-6 dropdown">
                         <button 
                             class="btn btn-primary dropdown-toggle" 
-                            href="#"
                             data-bs-toggle="dropdown" 
                             aria-expanded="false"
                             data-bs-auto-close="outside"
@@ -48,8 +48,8 @@
                                 </div>
                                 <div class="mb-3">
                                     <div class="form-check">
-                                    <input type="checkbox" class="form-check-input">
-                                    <label class="form-check-label" for="dropdownCheck">
+                                    <input type="checkbox" class="form-check-input" name="remember">
+                                    <label class="form-check-label" for="dropdownCheck" >
                                         Remember me
                                     </label>
                                     </div>
@@ -87,6 +87,15 @@
                         </div>
 
                     </div>
+
+                    <!-- Profile link -->
+                    <div class="col-6">
+
+                    </div>
+                    <!-- Leave link -->
+                    <div class="col-6">
+
+                    </div>
                 </div>
             </div>
         </nav>
@@ -119,8 +128,8 @@
                                     <input 
                                         class="form-control custom-font" 
                                         type="text" 
-                                        placeholder="Enter your URL (e.g. http://google.com)" 
-                                        aria-label="Enter your URL (e.g. http://google.com)" 
+                                        placeholder="Enter your URL (e.g. https://google.com)" 
+                                        aria-label="Enter your URL (e.g. https://google.com)" 
                                         aria-describedby="button-submit" 
                                         id="url-form"
                                         name="output_url"

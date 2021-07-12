@@ -2,23 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\Login;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules\Password;
-
 class UserController extends Controller
 {
-    public function auth(Request $request) {
+    public function auth(Login $request) { 
+        $credentials = $request->validated();
 
-        $credentials = $request->validate([
-            'email' => ['required', 'email'], 
-            'password' => ['required']
-        ]);
-        if (Auth::attempt($credentials)) {
+        (isset($request->remember) ? $remember = true : $remember = false);
+
+        if (Auth::attempt($credentials, $remember)) {
             $request->session()->regenerate();
-
-            return redirect()->intended('profile');
+            return view('profile');
         }
 
         return back()->withErrors([

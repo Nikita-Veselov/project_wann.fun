@@ -62,12 +62,13 @@ class LinkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
         $current_url = url()->current();
-        $link = Link::firstWhere('input_url', $current_url);
-        // dd($link->output_url);
-        return redirect()->away($link->output_url);
+        if ($link = Link::firstWhere('input_url', $current_url)){
+            return redirect()->away($link->output_url);
+        }
+        return redirect()->route('link');
     }
 
     /**
