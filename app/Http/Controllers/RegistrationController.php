@@ -2,15 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateLink;
-use App\Models\Link;
+use App\Http\Requests\CreateUser;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Str;
 
-use function PHPUnit\Framework\isEmpty;
-
-class LinkController extends Controller
+class RegistrationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +16,7 @@ class LinkController extends Controller
      */
     public function index()
     {
-        return view('main');
+        //
     }
 
     /**
@@ -29,8 +26,7 @@ class LinkController extends Controller
      */
     public function create()
     {
-        
-        
+        //
     }
 
     /**
@@ -39,26 +35,13 @@ class LinkController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateLink $request)
+    public function store(CreateUser $request)
     {
-        $input = $request->all();
+        $user = User::create(request(['name', 'email', 'password']));
 
-        $input['input_url'] =  $request->input_url . '_'. Str::random(5);
-        if (Auth::check()) {
-            $input['user_id'] = Auth::user()->email;
-        } else {
-            $input['user_id'] = 'guest';
-        }
-        
-        if(Link::create($input)) {
-            $input['input_url'] = "wann.fun/" . $input['input_url'];
-            return redirect()->route('main')->with([
-                'success'=> 'Link created successfully!',
-                'url' => $input["input_url"]
-            ]);
-        }
-    
-        return back()->with('error', 'Link creation error');
+        Auth::login($user);
+
+        return back()->with('success', 'Registered new user "' . $user['name'] . '" successfully!');
     }
 
     /**
@@ -67,13 +50,9 @@ class LinkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(String $slug)
+    public function show($id)
     {
-
-        if ($link = Link::firstWhere('input_url', $slug)){
-            return redirect()->away($link->output_url);
-        }
-        return redirect()->route('link');
+        //
     }
 
     /**
@@ -110,4 +89,3 @@ class LinkController extends Controller
         //
     }
 }
-

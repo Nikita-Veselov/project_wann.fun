@@ -23,79 +23,93 @@
                 <a class="navbar-brand navbar-brand-font" href="#!">Wannfun</a>
                 <div class="row">
 
-                    <!-- Login form -->
-                    <div class="col-6 dropdown">
-                        <button 
-                            class="btn btn-primary dropdown-toggle" 
-                            data-bs-toggle="dropdown" 
-                            aria-expanded="false"
-                            data-bs-auto-close="outside"
-                        >
-                            Log In
-                        </button>
+                    @if(Auth::check())
+                        <!-- Profile link -->
+                        <div class="col-6">
+                            <form method="get" action="/profile">
+                                <button class="btn btn-primary custom-font" type="submit">{{ Auth::user()->name }}</button>
+                            </form>
+                        </div>
+                        <!-- Leave link -->
+                        <div class="col-6">
+                            <form method="get" action="/login">
+                                <button class="btn btn-primary custom-font" type="submit">Logout</button>
+                            </form>
+                        </div>
+                    @else
+                        <!-- Login form -->
+                        <div class="col-6 dropdown">
+                            <button 
+                                class="btn btn-primary dropdown-toggle" 
+                                data-bs-toggle="dropdown" 
+                                aria-expanded="false"
+                                data-bs-auto-close="outside"
+                            >
+                                Log In
+                            </button>
 
-                        <div 
-                            class="dropdown-menu dropdown-menu-md-end dropdown-menu-start">
-                            <form class="px-4 py-3" style="width: 15rem;" action="{{ route('profile') }}">
-                                @csrf
-                                <div class="mb-3">
-                                    <label for="login" class="form-label">Login</label>
-                                    <input type="email" class="form-control" name="email" placeholder="Login">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="password" class="form-label">Password</label>
-                                    <input type="password" class="form-control" name="password" placeholder="Password">
-                                </div>
-                                <div class="mb-3">
-                                    <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" name="remember">
-                                    <label class="form-check-label" for="dropdownCheck" >
-                                        Remember me
-                                    </label>
+                            <div class="dropdown-menu dropdown-menu-md-end dropdown-menu-start">
+                                <form class="px-4 py-3" style="width: 15rem;" method="POST" action="/login">
+                                    @csrf
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" name="email" placeholder="Email">
                                     </div>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Sign in</button>
-                            </form>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Forgot password?</a>
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label">Password</label>
+                                        <input type="password" class="form-control" name="password" placeholder="Password">
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="form-check">
+                                        <label class="form-check-label" for="remember" >Remember me</label>   
+                                        <input type="checkbox" class="form-check-input" name="remember">
+                                        
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Sign in</button>
+                                </form>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Forgot password?</a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Registration form -->
-                    <div class="col-6 dropdown">
-                        <button 
-                            class="btn btn-primary dropdown-toggle" 
-                            href="#"
-                            data-bs-toggle="dropdown" 
-                            aria-expanded="false"
-                            data-bs-auto-close="outside"
-                        >
-                            Register
-                        </button>
+                        <!-- Registration form -->
+                        <div class="col-6 dropdown">
+                            <button 
+                                class="btn btn-primary dropdown-toggle" 
+                                data-bs-toggle="dropdown" 
+                                aria-expanded="false"
+                                data-bs-auto-close="outside"
+                            >
+                                Register
+                            </button>
 
-                        <div class="dropdown-menu dropdown-menu-end">
-                            <form class="px-4 py-3" style="width: 15rem;">
-                                <div class="mb-3">
-                                    <label for="DropdownFormEmail" class="form-label">Email address</label>
-                                    <input type="email" class="form-control" name="DropdownFormEmail" placeholder="email@example.com">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="DropdownFormPassword" class="form-label">Password</label>
-                                    <input type="password" class="form-control" name="DropdownFormPassword" placeholder="Password">
-                                </div>
-                                <button type="submit" class="btn btn-primary">Sign in</button>
-                            </form>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <form class="px-4 py-3" style="width: 15rem;" method="POST" action="/registration">
+                                    @csrf
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Name</label>
+                                        <input type="text" class="form-control" name="name" placeholder="Name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email address</label>
+                                        <input type="email" class="form-control" name="email" placeholder="email@example.com">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label">Password</label>
+                                        <input type="password" class="form-control" name="password" placeholder="Password">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="password_confirmation" class="form-label">Password Confirmation</label>
+                                        <input type="password" class="form-control" name="password_confirmation" placeholder="Password Confirmation">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Sign in</button>
+                                </form>
+                            </div>
+
                         </div>
+                    @endif
 
-                    </div>
-
-                    <!-- Profile link -->
-                    <div class="col-6">
-
-                    </div>
-                    <!-- Leave link -->
-                    <div class="col-6">
-
-                    </div>
+                    
                 </div>
             </div>
         </nav>
@@ -111,7 +125,9 @@
 
                             @if(session()->has('success'))
                                 <div class="alert alert-success">{{ session()->get('success') }}</div>
+                                @if(session()->has('url'))
                                 <div class="alert alert-info">{{ session()->get('url') }}</div>
+                                @endif
                             @endif
 
                             @if($errors->any())
@@ -121,7 +137,7 @@
                             @endif
                             
                             <!-- URL form-->
-                            <form method="post" action="{{ route('link.store') }}">
+                            <form method="post" action="{{ route('main.store') }}">
                                 @csrf
 
                                 <div class="input-group">

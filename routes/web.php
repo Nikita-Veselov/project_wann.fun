@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LinkController;
+use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,21 +19,22 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('link');
-})->name('link');
+    return view('main');
+})->name('main');
 
 Route::get('/away', function () {
-    return view('link');
+    return view('main');
 })->name('away');
 
-Route::resource('/link', LinkController::class);
+Route::resource('/main', LinkController::class);
 
-Route::get('/profile', [UserController::class, 'auth'
-])->name('profile'); 
-// ->middleware('auth')
+Route::get('/profile', [UserController::class, 'index']); 
 
-Route::get('/{any?}', [LinkController::class, 'show'])->where('any', '.*');
+Route::post('/registration', [RegistrationController::class, 'store']);
 
+Route::post('/login', [UserController::class, 'store']);
 
+Route::get('/login', [UserController::class, 'destroy']);
 
+Route::get('/{slug}', [LinkController::class, 'show']);
 

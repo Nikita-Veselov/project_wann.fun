@@ -2,22 +2,37 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Login;
+use App\Models\Link;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
+
 class UserController extends Controller
 {
-    public function auth(Login $request) { 
-        $credentials = $request->validated();
+    public function index() {
+        $userEmail = Auth::user()->email;
+        $links = Link::select('input_url', 'output_url', 'created_at')->where('user_id', $userEmail)->get();
+        
+        return view('profile', [
+            'links' => $links
+        ]);  
+    }
 
-        (isset($request->remember) ? $remember = true : $remember = false);
-
-        if (Auth::attempt($credentials, $remember)) {
-            $request->session()->regenerate();
-            return view('profile');
+    public function store(Request $request)
+    {
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            return redirect()->to('/profile');
+        } else {
+            return back()->withErrors([
+                'message' => 'The email or password is incorrect, please try again'
+            ]);
         }
-
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ]);
+    }
+    
+    public function destroy()
+    {
+        Auth::logout();
+        
+        return redirect()->to('/main');
     }
 }
