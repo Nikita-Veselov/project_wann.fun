@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChartController;
 use App\Http\Controllers\LinkController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\UserController;
@@ -36,6 +37,10 @@ Route::group(['prefix' => 'link', 'as' => 'link.'], function() {
         ->name('edit');
     Route::get('/update/{id}', [LinkController::class, 'update'])
         ->name('update'); 
+    Route::get('/show/{id}', [LinkController::class, 'show'])
+        ->name('show');  
+    Route::get('/getStats/{id}', [LinkController::class, 'getStats'])
+        ->name('getStats'); 
 });
 
 Route::get('/profile', [UserController::class, 'index'])
@@ -47,4 +52,7 @@ Route::post('/login', [UserController::class, 'store']);
 
 Route::get('/login', [UserController::class, 'destroy']);
 
-Route::get('/{slug}', [LinkController::class, 'show']);
+Route::get('/{slug}', [LinkController::class, 'redirect']);
+
+
+Route::get('chart', [ChartController::class, 'index'])->name('api.chart');

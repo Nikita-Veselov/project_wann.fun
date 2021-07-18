@@ -72,17 +72,15 @@ class LinkController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function show(String $slug, Request $request)
+    public function show($id)
     {
+        $link = Link::where('id', $id)->first();
+        $stats = Click::where('link', $link->input_url)->get();
 
-        if ($link = Link::where('input_url', $slug)->first()){
-            
-            $geo = Location::get();
-            Click::create(['link' => $link->input_url, 'ip' => $request->ip(), 'geo' => $geo->countryName]);
-
-            return redirect()->away($link->output_url);
-        }
-        return redirect()->route('main');
+        return view('show', [
+            'link' => $link,
+            'stats' => $stats
+        ]);
     }
 
     /**
@@ -109,14 +107,16 @@ class LinkController extends Controller
     public function update(UpdateLink $request, $id)
     {
         $link = Link::where('id', $id)->first();
+        
+        Click::where('link', $link->input_url)->update(['link' => $request->input_url]);
 
-        $link->input_url = $request->input_url;
-        $link->output_url = $request->output_url;
-
-        if($link->save()) {
-            return redirect()->route('profile')
-                ->with('success', 'News edition success');
-        }
+        if($link->update([
+            'input_url' => $request->input_url, 
+            'output_url' => $request->output_url])) 
+            {
+                return redirect()->route('profile')
+                    ->with('success', 'News edition success');
+            }
     
         return back()->with('error', 'News edition error');
     }
@@ -133,6 +133,17 @@ class LinkController extends Controller
         $link->delete();
 
         return redirect()->route('profile');
+    }
+
+    public function redirect(String $slug, Request $request) {
+        if ($link = Link::where('input_url', $slug)->first()){
+            
+            $geo = Location::get();
+            Click::create(['link' => $link->input_url, 'ip' => $request->ip(), 'geo' => $geo->countryName]);
+
+            return redirect()->away($link->output_url);
+        }
+        return redirect()->route('main');
     }
 }
 
