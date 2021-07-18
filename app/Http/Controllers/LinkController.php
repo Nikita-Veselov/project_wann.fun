@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateLink;
 use App\Http\Requests\UpdateLink;
+use App\Models\Click;
 use App\Models\Link;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use phpDocumentor\Reflection\Location as ReflectionLocation;
+use Stevebauman\Location\Facades\Location as Location;
 
 use function PHPUnit\Framework\isEmpty;
 
@@ -65,12 +69,17 @@ class LinkController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function show(String $slug)
+    public function show(String $slug, Request $request)
     {
 
-        if ($link = Link::firstWhere('input_url', $slug)){
+        if ($link = Link::where('input_url', $slug)->first()){
+            
+            $geo = Location::get();
+            Click::create(['link' => $link->input_url, 'ip' => $request->ip(), 'geo' => $geo->countryName]);
+
             return redirect()->away($link->output_url);
         }
         return redirect()->route('main');
@@ -103,7 +112,7 @@ class LinkController extends Controller
 
         $link->input_url = $request->input_url;
         $link->output_url = $request->output_url;
-        
+
         if($link->save()) {
             return redirect()->route('profile')
                 ->with('success', 'News edition success');

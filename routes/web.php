@@ -48,4 +48,3 @@ Route::post('/login', [UserController::class, 'store']);
 Route::get('/login', [UserController::class, 'destroy']);
 
 Route::get('/{slug}', [LinkController::class, 'show']);
-
