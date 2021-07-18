@@ -28,7 +28,18 @@ Route::get('/away', function () {
 
 Route::resource('/main', LinkController::class);
 
-Route::get('/profile', [UserController::class, 'index']); 
+ 
+Route::group(['prefix' => 'link', 'as' => 'link.'], function() {
+    Route::get('/destroy/{id}', [LinkController::class, 'destroy'])
+        ->name('destroy');
+    Route::get('/edit/{id}', [LinkController::class, 'edit'])
+        ->name('edit');
+    Route::get('/update/{id}', [LinkController::class, 'update'])
+        ->name('update'); 
+});
+
+Route::get('/profile', [UserController::class, 'index'])
+    ->name('profile'); 
 
 Route::post('/registration', [RegistrationController::class, 'store']);
 

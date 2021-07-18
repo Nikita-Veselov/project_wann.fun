@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateLink;
+use App\Http\Requests\UpdateLink;
 use App\Models\Link;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
@@ -73,7 +73,7 @@ class LinkController extends Controller
         if ($link = Link::firstWhere('input_url', $slug)){
             return redirect()->away($link->output_url);
         }
-        return redirect()->route('link');
+        return redirect()->route('main');
     }
 
     /**
@@ -84,7 +84,10 @@ class LinkController extends Controller
      */
     public function edit($id)
     {
-        //
+        $link = Link::where('id', $id)->first();
+        return view('edit', [
+            'link' => $link
+        ]);
     }
 
     /**
@@ -94,9 +97,19 @@ class LinkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateLink $request, $id)
     {
-        //
+        $link = Link::where('id', $id)->first();
+
+        $link->input_url = $request->input_url;
+        $link->output_url = $request->output_url;
+        
+        if($link->save()) {
+            return redirect()->route('profile')
+                ->with('success', 'News edition success');
+        }
+    
+        return back()->with('error', 'News edition error');
     }
 
     /**
@@ -107,7 +120,10 @@ class LinkController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $link = Link::find($id);
+        $link->delete();
+
+        return redirect()->route('profile');
     }
 }
 

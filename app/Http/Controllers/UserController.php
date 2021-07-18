@@ -11,7 +11,7 @@ class UserController extends Controller
 {
     public function index() {
         $userEmail = Auth::user()->email;
-        $links = Link::select('input_url', 'output_url', 'created_at')->where('user_id', $userEmail)->get();
+        $links = Link::select('input_url', 'output_url', 'created_at', 'id')->where('user_id', $userEmail)->get();
         
         return view('profile', [
             'links' => $links
