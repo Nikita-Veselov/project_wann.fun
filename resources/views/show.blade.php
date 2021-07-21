@@ -14,7 +14,4 @@
     
   @endforeach
   
-
-
-
 @endsection

@@ -179,6 +179,95 @@
             </div>
         </header>
 
+
+
+        {{-- MOVE THIS BLOCK TO PROFILE LINK SHOW PAGE --}}
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous">
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.js" integrity="sha512-lUsN5TEogpe12qeV8NF4cxlJJatTZ12jnx9WXkFXOy7yFbuHwYRTjmctvwbRIuZPhv+lpvy7Cm9o8T9e+9pTrg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+         
+        {{-- PASS THE DATA IN THIS BY {{  }} --}}
+        <div class="geoChartData" style="display: none">[7, 3, 5]</div>
+        <div class="geoChartLabels" style="display: none">["UK", "USA", "Russia"]</div>   
+ 
+        <div class="clicksChartData" style="display: none">[3, 5, 1, 8, 6]</div>
+        <div class="clicksChartLabels" style="display: none">["16.07.21", "17.07.21", "18.07.21", "19.07.21", "20.07.21"]</div>   
+        
+        {{-- PUT THIS WHERE CHARTS GONNA BE --}}
+        <div class="row">
+            <div class="col-6"><canvas class="geoChart col-6" width="100%" height="auto"></canvas></div>
+            <div class="col-6"><canvas class="clicksChart col-6" width="100%" height="auto"></canvas></div>
+        </div>
+        {{-- PUT THIS SCRIPT IN SEPARATE CHARTS FILE --}}
+        <script>
+            ctx = $("canvas.geoChart")
+
+            data = $("div.geoChartData").html();
+            dataJSON = JSON.parse(data);
+
+            labels = $("div.geoChartLabels").html();
+            labelsJSON = JSON.parse(labels);
+
+            var myChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: labelsJSON,
+                    datasets: [{
+                        label: "geoClicks",
+                        data: dataJSON,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)'
+                        ],
+                        borderWidth: 1,
+                        hoverOffset: 4,
+                    }]
+                },
+
+            });
+
+            ctx2 = $("canvas.clicksChart")
+
+            data2 = $("div.clicksChartData").html();
+            dataJSON2 = JSON.parse(data2);
+
+            labels2 = $("div.clicksChartLabels").html();
+            labelsJSON2 = JSON.parse(labels2);
+
+            var myChart = new Chart(ctx2, {
+                type: 'line',
+                data: {
+                    labels: labelsJSON2,
+                    datasets: [{
+                        label: "clicksDates",
+                        data: dataJSON2,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 1,
+                        hoverOffset: 4,
+                    }]
+                },
+
+            });
+        </script>
+
+
+
+
         <!-- Icons Grid-->
         <section class="features-icons bg-light text-center">
             <div class="container">
