@@ -139,7 +139,7 @@ class LinkController extends Controller
         if ($link = Link::where('input_url', $slug)->first()){
             
             $geo = Location::get();
-            Click::create(['link' => $link->input_url, 'ip' => $request->ip(), 'geo' => $geo->countryName]);
+            Click::create(['link' => $link->input_url, 'ip' => $request->ip(), 'geo' => $geo->countryCode]);
 
             return redirect()->away($link->output_url);
         }
