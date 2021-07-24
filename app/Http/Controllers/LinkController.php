@@ -9,7 +9,6 @@ use App\Models\Link;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
-use phpDocumentor\Reflection\Location as ReflectionLocation;
 use Stevebauman\Location\Facades\Location as Location;
 
 use function PHPUnit\Framework\isEmpty;
@@ -138,8 +137,9 @@ class LinkController extends Controller
     public function redirect(String $slug, Request $request) {
         if ($link = Link::where('input_url', $slug)->first()){
             
-            $geo = Location::get();
-            Click::create(['link' => $link->input_url, 'ip' => $request->ip(), 'geo' => $geo->countryCode]);
+            $geo = Location::get($request->ip());
+            
+            Click::create(['link' => $link->input_url, 'ip' => $request->ip(), 'geo' => $geo->country]);
 
             return redirect()->away($link->output_url);
         }
