@@ -185,23 +185,23 @@
         </header>
 
         {{-- Ads --}}
-        {{-- <table>
+        <table>
             <tr>
                 <td><div id="id_banner_affi1" >Please consider turning off your AdBlock to support our free website!</div></td>
                 <td><div id="id_banner_affi2" >Please consider turning off your AdBlock to support our free website!</div></td>
                 <td><div id="id_banner_affi3" >Please consider turning off your AdBlock to support our free website!</div></td>
                 <td><div id="id_banner_affi4" >Please consider turning off your AdBlock to support our free website!</div></td>
             </tr>
-        </table> --}}
+        </table>
 
 
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-3"><div id="id_banner_affi1" >Please consider turning off your AdBlock to support our free website!</div></div>
             <div class="col-3"><div id="id_banner_affi2" >Please consider turning off your AdBlock to support our free website!</div></div>
             <div class="col-3"><div id="id_banner_affi3" >Please consider turning off your AdBlock to support our free website!</div></div>
             <div class="col-3"><div id="id_banner_affi4" >Please consider turning off your AdBlock to support our free website!</div></div>
         </div>
-        
+         --}}
         
         
          
