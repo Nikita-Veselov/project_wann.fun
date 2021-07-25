@@ -115,7 +115,9 @@
                 </div>
             </div>
         </nav>
-        <div id="id_banner_affi">test</div>
+
+        <div id="id_banner_affi" class="row"></div>
+        
         <!-- Main-->
         <header class="masthead" style="background: url('{{ asset('assets/img/bg-masthead.jpg') }}') no-repeat center center">
             <div class="container position-relative">
@@ -157,6 +159,7 @@
                                         <option><div class="active">date_me</div></option>
                                         <option><div class="">kiss_me</div></option>
                                         <option><div class="">wanna_date_me</div></option>
+                                        <option><div class="">my_photos</div></option>
                                         <option><div class="">date_me_then</div></option>
                                         <option><div class="">please_date_me</div></option>
                                         <option><div class="">date_4_me</div></option>
