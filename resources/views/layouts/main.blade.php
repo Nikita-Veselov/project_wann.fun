@@ -21,6 +21,7 @@
         <nav class="navbar navbar-light bg-light static-top navbar-gradient">
             <div class="container container-md">
                 <a class="navbar-brand navbar-brand-font" href="#!">Wannfun</a>
+                <div id="id_banner_affi" class=""></div>
                 <div class="row">
 
                     @if(Auth::check())
@@ -179,12 +180,6 @@
             </div>
         </header>
 
-
-
-        
-
-
-
         <!-- Icons Grid-->
         <section class="features-icons bg-light text-center">
             <div class="container">
@@ -225,23 +220,23 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                            <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-1.jpg" alt="..." />
-                            <h5>Margaret E.</h5>
-                            <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
+                            <img class="img-fluid rounded-circle mb-3" src="{{ asset('assets/img/testimonials-1.jpg') }}" alt="..." />
+                            <h5>Jayesh D.</h5>
+                            <p class="font-weight-light mb-0">"Perform great with social media and chat traffic."</p>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                            <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-2.jpg" alt="..." />
-                            <h5>Fred S.</h5>
-                            <p class="font-weight-light mb-0">"Wann.fun is amazing. I've been using it to create lots of super nice landing URL's."</p>
+                            <img class="img-fluid rounded-circle mb-3" src="{{ asset('assets/img/testimonials-2.jpg') }}" alt="..." />
+                            <h5>Tushar K.</h5>
+                            <p class="font-weight-light mb-0">"This product is truly amazing! I've increased my CR up to 50% with it."</p>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                            <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-3.jpg" alt="..." />
-                            <h5>Sarah W.</h5>
-                            <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
+                            <img class="img-fluid rounded-circle mb-3" src="{{ asset('assets/img/testimonials-3.jpg') }}" alt="..." />
+                            <h5>Lakshit B.</h5>
+                            <p class="font-weight-light mb-0">"Easy to use and effective as well. Perfect for the tasks it made for."</p>
                         </div>
                     </div>
                 </div>
@@ -282,7 +277,7 @@
                 </div>
             </div>
         </footer>
-
+        <script src="//mediapalmtree.com/bn-script.js?t=1627231783" data-ts="1627231783" data-domain='gecontentasap.com' data-cdn-domain='mediapalmtree.com' data-promo-cdn='mediapalmtree.com' data-pl-token='46477bd28b885425da5471ca38cc26592d92d2d0' data-target='cw' data-place-id='id_banner_affi' ></script>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
