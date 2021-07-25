@@ -116,8 +116,8 @@
             </div>
         </nav>
 
-        <div id="id_banner_affi" class="row"></div>
-        
+        <div id="id_banner_affi" class="col-12">test</div>
+
         <!-- Main-->
         <header class="masthead" style="background: url('{{ asset('assets/img/bg-masthead.jpg') }}') no-repeat center center">
             <div class="container position-relative">
