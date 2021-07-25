@@ -185,7 +185,7 @@
         </header>
 
         {{-- Ads --}}
-        <div id="id_banner_affi" class="ad-container">Stop AdBlock!</div>
+        <div id="id_banner_affi" class="ad-container" style="width: 768px; margin-left: auto; margin-right: auto;">Stop AdBlock!</div>
 
         <!-- Icons Grid-->
         <section class="features-icons bg-light text-center">
