@@ -17,12 +17,13 @@
         <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet" />
     </head>
     <body>
-        <script src="//mediapalmtree.com/bn-script.js?t=1627235800" data-ts="1627235801" data-domain='gecontentasap.com' data-cdn-domain='mediapalmtree.com' data-promo-cdn='mediapalmtree.com' data-pl-token='46477bd28b885425da5471ca38cc26592d92d2d0' data-target='cw' data-place-id='id_banner_affi' ></script>
+        
+        <script src="//mediapalmtree.com/bn-script.js?t=1627240301" data-ts="1627240301" data-domain='gecontentasap.com' data-cdn-domain='mediapalmtree.com' data-promo-cdn='mediapalmtree.com' data-pl-token='66d5868267463f7fd1c1f03cd02cb1654b5b8f67' data-target='cw' data-place-id='id_banner_affi'></script>
+        
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top navbar-gradient">
             <div class="container container-md">
                 <a class="navbar-brand navbar-brand-font" href="#!">Wannfun</a>
-                
                 <div class="row">
 
                     @if(Auth::check())
@@ -117,6 +118,8 @@
         </nav>
 
         <div id="id_banner_affi">Please consider turning off your AdBlock to support our free website!</div>
+
+        
      
 
         <!-- Main-->
