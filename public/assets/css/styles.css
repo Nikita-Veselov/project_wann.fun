@@ -10952,6 +10952,8 @@ footer.footer {
 }
 
 .ad-container {
-  
+  width: 728px;
+  margin-left: auto;
+  margin-right: auto;
 }
 

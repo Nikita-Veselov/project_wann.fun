@@ -185,7 +185,7 @@
         </header>
 
         {{-- Ads --}}
-        <div id="id_banner_affi" class="ad-container"></div>
+        <div id="id_banner_affi" class="ad-container">Stop AdBlock!</div>
 
         <!-- Icons Grid-->
         <section class="features-icons bg-light text-center">
@@ -285,8 +285,6 @@
             </div>
         </footer>
         {{-- Ad srcipts --}}
-        {{-- push --}}
-        <script src="//mediapalmtree.com/v2/loader.js?_t=54241" data-ts="1627242361" data-token="afad8691ddb91cd6edeb5c1d2ecd61369614ee60" data-am="true" data-promo-cdn="mediapalmtree.com"></script>
 
         <script src="//mediapalmtree.com/bn-script.js?t=1627242299" data-ts="1627242300" data-domain='gecontentasap.com' data-cdn-domain='mediapalmtree.com' data-promo-cdn='mediapalmtree.com' data-pl-token='1d1635376a82f4ef54e5d450cbfaa568c7c8dc5e' data-target='nw' data-freq='oncePer2Minutes' data-place-id='id_banner_affi' ></script>
         
