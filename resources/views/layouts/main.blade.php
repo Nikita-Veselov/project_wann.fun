@@ -18,7 +18,8 @@
     </head>
     <body>
         
-        <script src="//mediapalmtree.com/bn-script.js?t=1627240301" data-ts="1627240301" data-domain='gecontentasap.com' data-cdn-domain='mediapalmtree.com' data-promo-cdn='mediapalmtree.com' data-pl-token='66d5868267463f7fd1c1f03cd02cb1654b5b8f67' data-target='cw' data-place-id='id_banner_affi'></script>
+        {{-- <script src="//mediapalmtree.com/bn-script.js?t=1627240301" data-ts="1627240301" data-domain='gecontentasap.com' data-cdn-domain='mediapalmtree.com' data-promo-cdn='mediapalmtree.com' data-pl-token='66d5868267463f7fd1c1f03cd02cb1654b5b8f67' data-target='cw' data-place-id='id_banner_affi'></script> --}}
+        <script src="//mediapalmtree.com/bn-script.js?t=1627240614" data-ts="1627240615" data-domain='gecontentasap.com' data-cdn-domain='mediapalmtree.com' data-promo-cdn='mediapalmtree.com' data-pl-token='a753994842d39bb601aadeef4c347e8f39b889c5' data-target='cw' data-place-id='id_banner_affi' ></script>
         
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top navbar-gradient">
