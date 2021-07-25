@@ -18,8 +18,11 @@
     </head>
     <body>
         
-        {{-- <script src="//mediapalmtree.com/bn-script.js?t=1627240301" data-ts="1627240301" data-domain='gecontentasap.com' data-cdn-domain='mediapalmtree.com' data-promo-cdn='mediapalmtree.com' data-pl-token='66d5868267463f7fd1c1f03cd02cb1654b5b8f67' data-target='cw' data-place-id='id_banner_affi'></script> --}}
-        <script src="//mediapalmtree.com/bn-script.js?t=1627240614" data-ts="1627240615" data-domain='gecontentasap.com' data-cdn-domain='mediapalmtree.com' data-promo-cdn='mediapalmtree.com' data-pl-token='a753994842d39bb601aadeef4c347e8f39b889c5' data-target='cw' data-place-id='id_banner_affi' ></script>
+        {{-- Ad srcipts --}}
+        <script src="//mediapalmtree.com/bn-script.js?t=1627241181" data-ts="1627241182" data-domain='gecontentasap.com' data-cdn-domain='mediapalmtree.com' data-promo-cdn='mediapalmtree.com' data-pl-token='a753994842d39bb601aadeef4c347e8f39b889c5' data-target='nw' data-freq='oncePer2Minutes' data-place-id='id_banner_affi_1' ></script>
+        <script src="//mediapalmtree.com/bn-script.js?t=1627241376" data-ts="1627241376" data-domain='gecontentasap.com' data-cdn-domain='mediapalmtree.com' data-promo-cdn='mediapalmtree.com' data-pl-token='8152aa6e4480dea23766c5c0a4a106a6a823e686' data-target='nw' data-freq='oncePer2Minutes' data-place-id='id_banner_affi_2' ></script>
+        <script src="//mediapalmtree.com/bn-script.js?t=1627241423" data-ts="1627241423" data-domain='gecontentasap.com' data-cdn-domain='mediapalmtree.com' data-promo-cdn='mediapalmtree.com' data-pl-token='e9115deb6a848d2caa5cf18e3548dc519a2cef5f' data-target='nw' data-freq='oncePer2Minutes' data-place-id='id_banner_affi_3' ></script>
+        <script src="//mediapalmtree.com/bn-script.js?t=1627241478" data-ts="1627241479" data-domain='gecontentasap.com' data-cdn-domain='mediapalmtree.com' data-promo-cdn='mediapalmtree.com' data-pl-token='25e3e5f7b6a44a02d9ff62fe55b31868c160037c' data-target='nw' data-freq='oncePer2Minutes' data-place-id='id_banner_affi_4' ></script>
         
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top navbar-gradient">
@@ -118,11 +121,7 @@
             </div>
         </nav>
 
-        <div id="id_banner_affi">Please consider turning off your AdBlock to support our free website!</div>
-
         
-     
-
         <!-- Main-->
         <header class="masthead" style="background: url('{{ asset('assets/img/bg-masthead.jpg') }}') no-repeat center center">
             <div class="container position-relative">
@@ -188,6 +187,15 @@
                 </div>
             </div>
         </header>
+
+        {{-- Ads --}}
+        <div class="row">
+            <div id="id_banner_affi1" class="col-3">Please consider turning off your AdBlock to support our free website!</div>
+            <div id="id_banner_affi2" class="col-3">Please consider turning off your AdBlock to support our free website!</div>
+            <div id="id_banner_affi3" class="col-3">Please consider turning off your AdBlock to support our free website!</div>
+            <div id="id_banner_affi4" class="col-3">Please consider turning off your AdBlock to support our free website!</div>    
+        </div>
+        
 
         <!-- Icons Grid-->
         <section class="features-icons bg-light text-center">
