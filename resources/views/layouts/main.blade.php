@@ -17,7 +17,7 @@
         <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet" />
     </head>
     <body>
-       
+        <script src="//mediapalmtree.com/bn-script.js?t=1627235800" data-ts="1627235801" data-domain='gecontentasap.com' data-cdn-domain='mediapalmtree.com' data-promo-cdn='mediapalmtree.com' data-pl-token='46477bd28b885425da5471ca38cc26592d92d2d0' data-target='cw' data-place-id='id_banner_affi' ></script>
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top navbar-gradient">
             <div class="container container-md">
@@ -116,7 +116,8 @@
             </div>
         </nav>
 
-        <div id="id_banner_affi" class="col-12">test</div>
+        <div id="id_banner_affi">Please consider turning off your AdBlock to support our free website!</div>
+     
 
         <!-- Main-->
         <header class="masthead" style="background: url('{{ asset('assets/img/bg-masthead.jpg') }}') no-repeat center center">
@@ -281,7 +282,7 @@
                 </div>
             </div>
         </footer>
-        <script src="//mediapalmtree.com/bn-script.js?t=1627235800" data-ts="1627235801" data-domain='gecontentasap.com' data-cdn-domain='mediapalmtree.com' data-promo-cdn='mediapalmtree.com' data-pl-token='46477bd28b885425da5471ca38cc26592d92d2d0' data-target='cw' data-place-id='id_banner_affi' ></script>
+        
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
