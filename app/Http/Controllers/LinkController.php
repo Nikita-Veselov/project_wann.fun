@@ -143,9 +143,6 @@ class LinkController extends Controller
             } else {
                 Click::create(['link' => $link->input_url, 'ip' => $request->ip(), 'geo' => 'undefined']);
             }
-            
-            
-
             return redirect()->away($link->output_url);
         }
         return redirect()->route('main');

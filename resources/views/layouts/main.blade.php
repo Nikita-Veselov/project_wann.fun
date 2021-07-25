@@ -252,15 +252,21 @@
         <footer class="footer bg-light navbar-gradient">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
+                    <div class="col-12 h-100 text-center my-auto">
                         <ul class="list-inline mb-2">
-                            <li class="list-inline-item"><a href="#!">About</a></li>
+                            {{-- <li class="list-inline-item"><a href="#!">About</a></li>
                             <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Contact</a></li>
+                            <li class="list-inline-item"><a href="#!">Contact</a></li> --}}
+                            <li class="list-inline-item">Email: wann.fun.shortener@gmail.com</li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item">Partners: 
+                                <a href="https://lambushka.media" class="text-decoration-none link-light">Lambushka</a> |
+                                <a href="https://chikikliki.com" class="text-decoration-none link-light">Chikikliki</a>
+                            </li>
                         </ul>
                         <p class="text-muted small mb-4 mb-lg-0">&copy; Wann.fun 2021. All Rights Reserved.</p>
                     </div>
-                    <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+                    {{-- <div class="col-12 h-100 text-center my-auto">
                         <ul class="list-inline mb-0">
                             <li class="list-inline-item me-4">
                                 <a href="#!"><i class="bi-facebook fs-3"></i></a>
@@ -272,7 +278,7 @@
                                 <a href="#!"><i class="bi-instagram fs-3"></i></a>
                             </li>
                         </ul>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </footer>
