@@ -220,21 +220,21 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                            <img class="img-fluid rounded-circle mb-3" src="{{ asset('assets/img/testimonials-1.jpg') }}" alt="..." />
+                            <img class="img-fluid rounded-circle mb-3" src="{{ asset('assets/img/testimonials-4.jpg') }}" alt="..." />
                             <h5>Jayesh D.</h5>
                             <p class="font-weight-light mb-0">"Perform great with social media and chat traffic."</p>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                            <img class="img-fluid rounded-circle mb-3" src="{{ asset('assets/img/testimonials-2.jpg') }}" alt="..." />
+                            <img class="img-fluid rounded-circle mb-3" src="{{ asset('assets/img/testimonials-5.jpg') }}" alt="..." />
                             <h5>Tushar K.</h5>
                             <p class="font-weight-light mb-0">"This product is truly amazing! I've increased my CR up to 50% with it."</p>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                            <img class="img-fluid rounded-circle mb-3" src="{{ asset('assets/img/testimonials-3.jpg') }}" alt="..." />
+                            <img class="img-fluid rounded-circle mb-3" src="{{ asset('assets/img/testimonials-6.jpg') }}" alt="..." />
                             <h5>Lakshit B.</h5>
                             <p class="font-weight-light mb-0">"Easy to use and effective as well. Perfect for the tasks it made for."</p>
                         </div>
