@@ -9,33 +9,35 @@
 @extends('layouts.profile')
 
 @section('content')
+    <h1>GREAT AND GLORIOUS ADMIN PAGE!</h1>
 
-    <h1>ADMIN PAGE!</h1>
     <div>Registred users:{{ $users->count() }}</div>
     <div>Created links:{{ $links->count()  }}</div>
+    <div>All-time unique visitors:{{ $visitors->count() }}</div>
+    <div>{{ $visitorCount }}</div>
 
-
-<x-slot name="header">
-    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        {{ __('Dashboard') }}
-    </h2>
-</x-slot>
-
-<div class="py-12">
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-            <div class="p-6 bg-white border-b border-gray-200">
-                <x-graph :data="$chart_data" />
-                <x-table :columns="['Date', 'Visitors']">
-                    @forelse ($visitors as $day)
-                    <x-table-row :row="[date('d.m.Y', strtotime($day->date)), $day->total]" />
-                    @empty
-                    <x-table-row :row="['-', 'No data available']" />
-                    @endforelse
-                </x-table>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 bg-white border-b border-gray-200">
+                    <x-graph :data="$chart_data" />
+                </div>
             </div>
         </div>
     </div>
-</div>
+    <table>
+        <tr>
+            <th>Geo Mark</th>
+            <th>Number of Visitors</th>
+        </tr>
+        
+        @foreach ($visitorCount->chunk(1) as $country)
+
+        <tr>
+            <td>{{ $country->keys() }}</td>
+            <td>{{ $country->values() }}</td>
+        </tr>   
+        @endforeach
+    </table>
 
 @endsection

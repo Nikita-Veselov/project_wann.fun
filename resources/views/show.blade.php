@@ -36,8 +36,6 @@
       }
     }
 
-    
-
   @endphp
     
   {{-- MOVE THIS BLOCK TO PROFILE LINK SHOW PAGE --}}

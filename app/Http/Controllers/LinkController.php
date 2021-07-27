@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Stevebauman\Location\Facades\Location as Location;
 
-use function PHPUnit\Framework\isEmpty;
 
 class LinkController extends Controller
 {
@@ -22,7 +21,8 @@ class LinkController extends Controller
      */
     public function index()
     {
-        return view('main');
+        $admins = (new Controller)->admins;
+        return view('main', ['admins' => $admins]);
     }
 
     /**

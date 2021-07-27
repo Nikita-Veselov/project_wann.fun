@@ -27,7 +27,8 @@
                 <div class="row">
 
                     @if(Auth::check())
-                        @if( Auth::user()->name == 'Никита Веселов')
+
+                        @if( in_array(Auth::user()->name, $admins) )
                             {{-- Admin link --}}
                             <div class="col-4">
                                 <form method="get" action="/admin">
@@ -46,25 +47,7 @@
                                     <button class="btn btn-primary custom-font" type="submit">Logout</button>
                                 </form>
                             </div>
-                        @elseif(Auth::user()->name == '--')
-                            {{-- Admin link --}}
-                            <div class="col-4">
-                                <form method="get" action="/admin">
-                                    <button class="btn btn-primary custom-font" type="submit">Admin</button>
-                                </form>
-                            </div>
-                            <!-- Profile link -->
-                            <div class="col-4">
-                                <form method="get" action="/profile">
-                                    <button class="btn btn-primary custom-font" type="submit">Profile</button>
-                                </form>
-                            </div>
-                            <!-- Leave link -->
-                            <div class="col-4">
-                                <form method="get" action="/login">
-                                    <button class="btn btn-primary custom-font" type="submit">Logout</button>
-                                </form>
-                            </div>
+                        
                         @else
                             <!-- Profile link -->
                             <div class="col-6">

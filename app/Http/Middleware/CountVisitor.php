@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use App\Models\Visitor;
 use Closure;
 use Illuminate\Http\Request;
+use Stevebauman\Location\Facades\Location as Location;
 
 class CountVisitor
 {
@@ -18,11 +19,19 @@ class CountVisitor
     public function handle(Request $request, Closure $next)
     {
         $ip = hash('sha512', $request->ip());
+        
+        if ($geoIp = Location::get($request->ip())) {
+            $geo = $geoIp->countryName;
+        } else {
+            $geo = 'undefined';
+        };
+
         if (Visitor::where('date', today())->where('ip', $ip)->count() < 1)
         {
             Visitor::create([
                 'date' => today(),
                 'ip' => $ip,
+                'geo' => $geo
             ]);
         }
         return $next($request);

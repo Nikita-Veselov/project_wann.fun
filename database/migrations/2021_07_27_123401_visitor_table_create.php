@@ -16,6 +16,7 @@ class VisitorTableCreate extends Migration
         Schema::create('visitor', function (Blueprint $table) {
             $table->id();
             $table->string('ip');
+            $table->string('geo');
             $table->date('date');
         });
     }

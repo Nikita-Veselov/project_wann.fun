@@ -13,7 +13,8 @@ class Visitor extends Model
     protected $table = 'visitor';
     protected $fillable = [
         'date',
-        'ip'
+        'ip',
+        'geo'
     ];
 
     /**
