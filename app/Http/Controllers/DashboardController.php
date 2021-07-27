@@ -15,7 +15,7 @@ class DashboardController extends Controller
     {   
         
     
-        $admins = ['Никита Веселов', ''];
+        $admins = ['Никита Веселов', 'Edmin'];
         
         $users = User::all();
         $links = Link::all();
