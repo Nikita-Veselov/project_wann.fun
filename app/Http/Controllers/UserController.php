@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Link;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -33,6 +34,6 @@ class UserController extends Controller
     {
         Auth::logout();
         
-        return redirect()->to('/main');
+        return redirect()->to('/');
     }
 }

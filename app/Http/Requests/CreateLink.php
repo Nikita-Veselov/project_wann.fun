@@ -24,9 +24,7 @@ class CreateLink extends FormRequest
     public function rules()
     {
         return [
-            // 'input_url' => ['required', 'string'],
            'output_url' => ['required', 'string', 'url'],
-            // 'user_id' => ['required', 'string']
         ];
     }
 }

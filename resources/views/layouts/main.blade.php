@@ -27,18 +27,58 @@
                 <div class="row">
 
                     @if(Auth::check())
-                        <!-- Profile link -->
-                        <div class="col-6">
-                            <form method="get" action="/profile">
-                                <button class="btn btn-primary custom-font" type="submit">{{ Auth::user()->name }}</button>
-                            </form>
-                        </div>
-                        <!-- Leave link -->
-                        <div class="col-6">
-                            <form method="get" action="/login">
-                                <button class="btn btn-primary custom-font" type="submit">Logout</button>
-                            </form>
-                        </div>
+                        @if( Auth::user()->name == 'Никита Веселов')
+                            {{-- Admin link --}}
+                            <div class="col-4">
+                                <form method="get" action="/admin">
+                                    <button class="btn btn-primary custom-font" type="submit">Admin</button>
+                                </form>
+                            </div>
+                            <!-- Profile link -->
+                            <div class="col-4">
+                                <form method="get" action="/profile">
+                                    <button class="btn btn-primary custom-font" type="submit">Profile</button>
+                                </form>
+                            </div>
+                            <!-- Leave link -->
+                            <div class="col-4">
+                                <form method="get" action="/login">
+                                    <button class="btn btn-primary custom-font" type="submit">Logout</button>
+                                </form>
+                            </div>
+                        @elseif(Auth::user()->name == '--')
+                            {{-- Admin link --}}
+                            <div class="col-4">
+                                <form method="get" action="/admin">
+                                    <button class="btn btn-primary custom-font" type="submit">Admin</button>
+                                </form>
+                            </div>
+                            <!-- Profile link -->
+                            <div class="col-4">
+                                <form method="get" action="/profile">
+                                    <button class="btn btn-primary custom-font" type="submit">Profile</button>
+                                </form>
+                            </div>
+                            <!-- Leave link -->
+                            <div class="col-4">
+                                <form method="get" action="/login">
+                                    <button class="btn btn-primary custom-font" type="submit">Logout</button>
+                                </form>
+                            </div>
+                        @else
+                            <!-- Profile link -->
+                            <div class="col-6">
+                                <form method="get" action="/profile">
+                                    <button class="btn btn-primary custom-font" type="submit">Profile</button>
+                                </form>
+                            </div>
+                            <!-- Leave link -->
+                            <div class="col-6">
+                                <form method="get" action="/login">
+                                    <button class="btn btn-primary custom-font" type="submit">Logout</button>
+                                </form>
+                            </div>
+                        @endif
                     @else
                         <!-- Login form -->
                         <div class="col-6 dropdown">
@@ -111,7 +151,6 @@
 
                         </div>
                     @endif
-
                     
                 </div>
             </div>
@@ -141,7 +180,7 @@
                             @endif
                             
                             <!-- URL form-->
-                            <form method="post" action="{{ route('main.store') }}">
+                            <form method="post" action="{{ route('store') }}">
                                 @csrf
 
                                 <div class="input-group">
@@ -185,7 +224,7 @@
         </header>
 
         {{-- Ads --}}
-        <div id="id_banner_affi" class="ad-container" style="width: 768px; margin-left: auto; margin-right: auto;">Stop AdBlock!</div>
+        <div id="id_banner_affi" style="width: 768px; margin-left: auto; margin-right: auto;">Consider turning off AdBlock to support our free web-service!</div>
 
         <!-- Icons Grid-->
         <section class="features-icons bg-light text-center">
@@ -241,7 +280,7 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                            <img class="img-fluid rounded-circle mb-3" src="{{ asset('assets/img/testimonials-9.jpg') }}" alt="..." />
+                            <img class="img-fluid rounded-circle mb-3" src="{{ asset('assets/img/testimonials-6.jpg') }}" alt="..." />
                             <h5>Lakshit B.</h5>
                             <p class="font-weight-light mb-0">"Easy to use and effective as well. Perfect for the tasks it made for."</p>
                         </div>

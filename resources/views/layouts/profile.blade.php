@@ -37,7 +37,7 @@
                     <!-- Sidebar - Back -->
                 @if(Route::is('profile'))
 
-                    <a class="sidebar-brand d-flex align-items-center justify-content-center" href=" {{ route('main') }} ">
+                    <a class="sidebar-brand d-flex align-items-center justify-content-center" href=" {{ route('index') }} ">
                         <div class="sidebar-brand-icon">
                             <i class="fas fa-arrow-left"></i>
                         </div>

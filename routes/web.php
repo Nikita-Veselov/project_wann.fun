@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ChartController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LinkController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\UserController;
@@ -19,17 +19,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('main');
-})->name('main');
+Route::resource('/', LinkController::class);
 
-Route::get('/away', function () {
-    return view('main');
-})->name('away');
-
-Route::resource('/main', LinkController::class);
-
- 
 Route::group(['prefix' => 'link', 'as' => 'link.'], function() {
     Route::get('/destroy/{id}', [LinkController::class, 'destroy'])
         ->name('destroy');
@@ -43,8 +34,12 @@ Route::group(['prefix' => 'link', 'as' => 'link.'], function() {
         ->name('getStats'); 
 });
 
-Route::get('/profile', [UserController::class, 'index'])
-    ->name('profile'); 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin', [DashboardController::class, 'index'])
+    ->name('dashboard'); 
+    Route::get('/profile', [UserController::class, 'index'])
+    ->name('profile');    
+});
 
 Route::post('/registration', [RegistrationController::class, 'store']);
 
@@ -54,5 +49,3 @@ Route::get('/login', [UserController::class, 'destroy']);
 
 Route::get('/{slug}', [LinkController::class, 'redirect']);
 
-
-Route::get('chart', [ChartController::class, 'index'])->name('api.chart');

@@ -9,7 +9,6 @@ use App\Models\Link;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
-use Mockery\Undefined;
 use Stevebauman\Location\Facades\Location as Location;
 
 use function PHPUnit\Framework\isEmpty;
@@ -145,7 +144,7 @@ class LinkController extends Controller
             }
             return redirect()->away($link->output_url);
         }
-        return redirect()->route('main');
+        return redirect()->to('/');
     }
 }
 
