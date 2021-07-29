@@ -8,6 +8,7 @@ use App\Models\Click;
 use App\Models\Link;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
 use Stevebauman\Location\Facades\Location as Location;
 
@@ -55,7 +56,8 @@ class LinkController extends Controller
         
         if(Link::create($input)) {
             $input['input_url'] = "wann.fun/" . $input['input_url'];
-            return redirect()->route('main')->with([
+            
+            return redirect()->action([LinkController::class, 'index'])->with([
                 'success'=> 'Link created successfully!',
                 'url' => $input["input_url"]
             ]);

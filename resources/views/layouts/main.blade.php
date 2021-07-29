@@ -22,7 +22,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top navbar-gradient">
             <div class="container container-md">
-                <div class="navbar-brand navbar-brand-font">Wannfun</div>
+                <div class="navbar-brand navbar-brand-font">Wann.fun</div>
                   <div class="d-flex justify-content-around">
                     @if(Auth::check())
 
