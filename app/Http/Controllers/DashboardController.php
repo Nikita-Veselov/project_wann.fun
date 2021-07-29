@@ -20,14 +20,14 @@ class DashboardController extends Controller
         $users = User::all();
         $links = Link::all();
         $visitors = Visitor::all();
-
+        $visitorsToday = Visitor::select('date', DB::raw('count(*) as total'))->where('date', '=', today())->groupBy('date')->get();
         $visitorsChart = Visitor::select('date', DB::raw('count(*) as total'))->where('date', '>', today()->subMonth())->groupBy('date')->get();
         $chart_data = array();
 
-        $visitorCount = $visitors->map(function($item, $key) {
+        $visitorsCount = $visitors->map(function($item, $key) {
             return $item->geo;
         });
-        $visitorCount = $visitorCount->countBy();
+        $visitorsCount = $visitorsCount->countBy();
 
         foreach ($visitorsChart as $data)
         {
@@ -35,7 +35,15 @@ class DashboardController extends Controller
         }
 
         if (in_array(Auth::user()->name, $admins)) {
-            return view('admin.dashboard', compact(['visitorsChart', 'chart_data', 'links', 'users', 'visitors', 'visitorCount']));    
+            return view('admin.dashboard', compact([
+                'chart_data', 
+                'links', 
+                'users', 
+                'visitors', 
+                'visitorsToday', 
+                'visitorsCount',
+                'visitorsChart',
+            ]));    
         } else {
            return redirect()->to('/'); 
         }

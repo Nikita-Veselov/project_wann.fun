@@ -22,50 +22,38 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top navbar-gradient">
             <div class="container container-md">
-                <a class="navbar-brand navbar-brand-font" href="#!">Wannfun</a>
-                <div class="row">
-
+                <div class="navbar-brand navbar-brand-font">Wannfun</div>
+                <div class="d-flex justify-content-around">
                     @if(Auth::check())
 
+                        {{-- Admin link --}}
                         @if( in_array(Auth::user()->name, $admins) )
-                            {{-- Admin link --}}
-                            <div class="col-4">
-                                <form method="get" action="/admin">
-                                    <button class="btn btn-primary custom-font" type="submit">Admin</button>
-                                </form>
-                            </div>
-                            <!-- Profile link -->
-                            <div class="col-4">
-                                <form method="get" action="/profile">
-                                    <button class="btn btn-primary custom-font" type="submit">Profile</button>
-                                </form>
-                            </div>
-                            <!-- Leave link -->
-                            <div class="col-4">
-                                <form method="get" action="/login">
-                                    <button class="btn btn-primary custom-font" type="submit">Logout</button>
-                                </form>
-                            </div>
-                        
-                        @else
-                            <!-- Profile link -->
-                            <div class="col-6">
-                                <form method="get" action="/profile">
-                                    <button class="btn btn-primary custom-font" type="submit">Profile</button>
-                                </form>
-                            </div>
-                            <!-- Leave link -->
-                            <div class="col-6">
-                                <form method="get" action="/login">
-                                    <button class="btn btn-primary custom-font" type="submit">Logout</button>
-                                </form>
-                            </div>
+                            
+                                <div class="px-3">
+                                    <form method="get" action="/admin">
+                                        <button class="btn btn-primary custom-font" type="submit">Admin</button>
+                                    </form>
+                                </div>    
+                            
                         @endif
+
+                        <!-- Profile link -->
+                        <div class="px-3">
+                            <form method="get" action="/profile">
+                                <button class="btn btn-primary custom-font" type="submit">Profile</button>
+                            </form>
+                        </div>
+                        <!-- Leave link -->
+                        <div class="px-3">
+                            <form method="get" action="/login">
+                                <button class="btn btn-primary custom-font" type="submit">Log Out</button>
+                            </form>
+                        </div>
                     @else
                         <!-- Login form -->
-                        <div class="col-6 dropdown">
+                        <div class="px-3 dropdown">
                             <button 
-                                class="btn btn-primary dropdown-toggle" 
+                                class="btn btn-primary dropdown-toggle custom-font" 
                                 data-bs-toggle="dropdown" 
                                 aria-expanded="false"
                                 data-bs-auto-close="outside"
@@ -98,9 +86,9 @@
                             </div>
                         </div>
                         <!-- Registration form -->
-                        <div class="col-6 dropdown">
+                        <div class="px-3 dropdown">
                             <button 
-                                class="btn btn-primary dropdown-toggle" 
+                                class="btn btn-primary dropdown-toggle custom-font" 
                                 data-bs-toggle="dropdown" 
                                 aria-expanded="false"
                                 data-bs-auto-close="outside"
@@ -133,7 +121,7 @@
 
                         </div>
                     @endif
-                    
+
                 </div>
             </div>
         </nav>
@@ -214,6 +202,9 @@
 
         {{-- Ads --}}
         <div id="id_banner_affi" style="width: 768px; margin-left: auto; margin-right: auto;">Consider turning off AdBlock to support our free web-service!</div>
+
+        {{-- Direct --}}
+        <a href="https://b3stcond1tions.com/ETroT26085356c712e243962b10d707cd6a5bcd7d1a9e?q={QUERY}">123</a>
 
         <!-- Icons Grid-->
         <section class="features-icons bg-light text-center">

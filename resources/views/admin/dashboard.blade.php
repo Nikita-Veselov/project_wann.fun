@@ -10,10 +10,12 @@
 
 @section('content')
     <h1>GREAT AND GLORIOUS ADMIN PAGE!</h1>
-
     <div>Registred users:{{ $users->count() }}</div>
-    <div>Created links:{{ $links->count()  }}</div>
+    
+    <div>Created links:{{ $links->count() }}</div>
     <div>All-time unique visitors:{{ $visitors->count() }}</div>
+    <div>Unique visitors today:{{ $visitorsToday->count() }}</div>
+    
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -30,7 +32,7 @@
             <th>Number of Visitors</th>
         </tr>
         
-        @foreach ($visitorCount->chunk(1) as $country)
+        @foreach ($visitorsCount->chunk(1) as $country)
 
         <tr>
             <td>{{ $country->keys() }}</td>
