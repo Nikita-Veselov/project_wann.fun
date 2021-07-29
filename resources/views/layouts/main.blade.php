@@ -23,7 +23,7 @@
         <nav class="navbar navbar-light bg-light static-top navbar-gradient">
             <div class="container container-md">
                 <div class="navbar-brand navbar-brand-font">Wannfun</div>
-                <div class="d-flex justify-content-around">
+                  <div class="d-flex justify-content-around">
                     @if(Auth::check())
 
                         {{-- Admin link --}}
@@ -125,10 +125,14 @@
                 </div>
             </div>
         </nav>
-     
+
+        
         <!-- Main-->
-        <header class="masthead" style="background: url('{{ asset('assets/img/bg-masthead.jpg') }}') no-repeat center center">
-            <div class="container position-relative">
+        <header class="masthead" style="background: url('{{ asset('assets/img/bg-masthead.jpg') }}') no-repeat center center"> 
+            
+            
+
+            <div class="container position-relative">   
                 <div class="row justify-content-center">
                     <div class="col-xl-6">
                         <div class="text-center text-white">
@@ -190,7 +194,7 @@
                                 </div>
                                     
                                 <p>
-                                    By clicking create button you agree to our 
+                                    By using the site you agree to our 
                                     <a href="" data-bs-toggle="modal" data-bs-target="#modal-terms" class="text-decoration-none link-info">Terms.</a>
                                 </p>
                             </form>
@@ -282,6 +286,7 @@
                                 <a href="https://chikikliki.com" class="text-decoration-none link-light">Chikikliki</a>
                             </li>
                         </ul>
+                        <p><a href="" data-bs-toggle="modal" data-bs-target="#modal-terms" class="text-decoration-none link-info">Terms of service</a></p>
                         <p class="text-muted small mb-4 mb-lg-0">&copy; Wann.fun 2021. All Rights Reserved.</p>
                     </div>
                 </div>
@@ -341,11 +346,25 @@
         {{-- Ad srcipts --}}
         {{-- Banner --}}
         <script src="//mediapalmtree.com/bn-script.js?t=1627242299" data-ts="1627242300" data-domain='gecontentasap.com' data-cdn-domain='mediapalmtree.com' data-promo-cdn='mediapalmtree.com' data-pl-token='1d1635376a82f4ef54e5d450cbfaa568c7c8dc5e' data-target='nw' data-freq='oncePer2Minutes' data-place-id='id_banner_affi' ></script>
-
+        {{-- popunder --}}
+        {{-- <script src="//mediapalmtree.com/pu-script.js?t=1627571971" data-ts="1627571971" data-domain='gecontentasap.com' data-cdn-domain='mediapalmtree.com' data-promo-cdn='mediapalmtree.com' data-pl-token='0e0ebb7203440d5e3351d914815ca69f084005ca' data-type='under' data-freq-global='false' data-do-prevent='false' data-deactivate-click-only='false' data-is-est-rotation='false' ></script> --}}
+        
+        {{-- Popper --}}
+        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="{{ asset('assets/js/scripts.js') }}"></script>
+        <script src="{{ asset('assets/vendor/jquery/jquery.js') }}"></script>
         
+        <script>
+            $( document ).ready(function() {
+              var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+              var toastList = toastElList.map(function(toastEl) {
+                return new bootstrap.Toast(toastEl)
+              });
+             toastList.forEach(toast => toast.show());
+            });
+        </script>
     </body>
 </html>

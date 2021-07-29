@@ -15,8 +15,6 @@ class DashboardController extends Controller
     {   
         
         $admins = (new Controller)->admins;
-        
-        
         $users = User::all();
         $links = Link::all();
         $visitors = Visitor::all();
