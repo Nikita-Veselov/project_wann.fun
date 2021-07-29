@@ -20,7 +20,7 @@ class DashboardController extends Controller
         $users = User::all();
         $links = Link::all();
         $visitors = Visitor::all();
-        $visitorsToday = Visitor::select('date', DB::raw('count(*) as total'))->where('date', '=', today())->groupBy('date')->get();
+        $visitorsToday = Visitor::where('date', '=', today())->get();
         $visitorsChart = Visitor::select('date', DB::raw('count(*) as total'))->where('date', '>', today()->subMonth())->groupBy('date')->get();
         $chart_data = array();
 
