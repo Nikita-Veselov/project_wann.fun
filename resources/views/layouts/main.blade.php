@@ -4,10 +4,11 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="author" content="Nikita-Veselov" />
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 
         <title>Wann.fun - short URL's for you</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="{{ asset('assets/favicon.ico') }}" />
+        
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
         <!-- Google fonts-->
@@ -18,8 +19,6 @@
     </head>
     <body>
         
-        
-
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top navbar-gradient">
             <div class="container container-md">
@@ -106,7 +105,7 @@
                                 aria-expanded="false"
                                 data-bs-auto-close="outside"
                             >
-                                Register
+                                Sign Up
                             </button>
 
                             <div class="dropdown-menu dropdown-menu-end">
@@ -138,8 +137,7 @@
                 </div>
             </div>
         </nav>
-
-        
+     
         <!-- Main-->
         <header class="masthead" style="background: url('{{ asset('assets/img/bg-masthead.jpg') }}') no-repeat center center">
             <div class="container position-relative">
@@ -181,24 +179,32 @@
                                         <option><div class="active">date_me</div></option>
                                         <option><div class="">kiss_me</div></option>
                                         <option><div class="">wanna_date_me</div></option>
-                                        <option><div class="">my_photos</div></option>
-                                        <option><div class="">date_me_then</div></option>
                                         <option><div class="">please_date_me</div></option>
-                                        <option><div class="">date_4_me</div></option>
+                                        <option><div class="">my_photos</div></option>
+                                        <option><div class="">pills</div></option>
+                                        <option><div class="">magic_pills</div></option>
+                                        <option><div class="">power_pills</div></option>
+                                        <option><div class="">gel</div></option>
+                                        <option><div class="">super_gel</div></option>
                                     </select>
                                 
                                     <button 
                                         class="btn btn-primary custom-font" 
                                         type="submit" 
-                                        onclick="copyToClipboardById('url-form')"
+                                        {{-- onclick="copyToClipboardById('url-form')"
                                         data-bs-toggle="tooltip" 
                                         data-bs-placement="bottom" 
-                                        title="Your new URL will be automaticaly copied to your clipboard!"
+                                        title="Your new URL will be automaticaly copied to your clipboard!" --}}
                                     >
                                         Create
                                     </button>
-
+                                    
                                 </div>
+                                    
+                                <p>
+                                    By clicking create button you agree to our 
+                                    <a href="" data-bs-toggle="modal" data-bs-target="#modal-terms" class="text-decoration-none link-info">Terms.</a>
+                                </p>
                             </form>
                         </div>
                     </div>
@@ -278,10 +284,7 @@
                 <div class="row">
                     <div class="col-12 h-100 text-center my-auto">
                         <ul class="list-inline mb-2">
-                            {{-- <li class="list-inline-item"><a href="#!">About</a></li>
-                            <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Contact</a></li> --}}
-                            <li class="list-inline-item">Email: wann.fun.shortener@gmail.com</li>
+                            <li class="list-inline-item">Email: <a href="mailto:admin@wann.fun" class="text-decoration-none link-light">admin@wann.fun </a></li>
                             <li class="list-inline-item">⋅</li>
                             <li class="list-inline-item">Partners: 
                                 <a href="https://lambushka.media" class="text-decoration-none link-light">Lambushka</a> |
@@ -290,26 +293,64 @@
                         </ul>
                         <p class="text-muted small mb-4 mb-lg-0">&copy; Wann.fun 2021. All Rights Reserved.</p>
                     </div>
-                    {{-- <div class="col-12 h-100 text-center my-auto">
-                        <ul class="list-inline mb-0">
-                            <li class="list-inline-item me-4">
-                                <a href="#!"><i class="bi-facebook fs-3"></i></a>
-                            </li>
-                            <li class="list-inline-item me-4">
-                                <a href="#!"><i class="bi-twitter fs-3"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#!"><i class="bi-instagram fs-3"></i></a>
-                            </li>
-                        </ul>
-                    </div> --}}
                 </div>
             </div>
         </footer>
-        {{-- Ad srcipts --}}
 
-        <script src="//mediapalmtree.com/bn-script.js?t=1627242299" data-ts="1627242300" data-domain='gecontentasap.com' data-cdn-domain='mediapalmtree.com' data-promo-cdn='mediapalmtree.com' data-pl-token='1d1635376a82f4ef54e5d450cbfaa568c7c8dc5e' data-target='nw' data-freq='oncePer2Minutes' data-place-id='id_banner_affi' ></script>
+        {{-- Modal --}}
+        <div class="modal fade" id="modal-terms" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title text-center" id="ModalLabel">Terms of Use</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>This Site allows publishers to shorten any URL and earn income by sharing the shortened URL. Advertising is shown to the viewer on their way to their destination URL. By using the Site's service, you agree that the Site includes advertisements on the shortened URLs which is a requirement for the Site to operate.</p>
+                        <p>By using the Site's service, you agree&nbsp;<strong>not&nbsp;</strong>to:</p>
+                        <ol>
+                        <li>
+                        <p>Advertise Wann.fun on&nbsp;<strong>traffic exchange</strong>&nbsp;websites and PTC/faucet websites;</p>
+                        </li>
+                        <li>
+                        <p>Place shortened links on websites containing content that may be threatening, harassing, defamatory, obscene,&nbsp;<strong>adult content,&nbsp;pornography</strong>, contain any viruses, Trojan horses, worms, time bombs, cancelbots or contain software which may cause damage to the viewer or the Site's server;</p>
+                        </li>
+                        <li>
+                        <p>Shrink URLs which redirect to websites containing the&nbsp;<strong>above mentioned content</strong>;</p>
+                        </li>
+                        <li>
+                        <p>Offer an incentive or beg a visitor to click on your shortened links;</p>
+                        </li>
+                        <li>
+                        <p>Spam any website, forum or blog with the Site's links;</p>
+                        </li>
+                        <li>
+                        <p>Bring fake/automated traffic of any kind to your links. This will get your account terminated automatically by our system. Manipulation of our system to gain views is also not allowed. This includes iframes, redirects, bots, proxies, traffic exchange, Email traffic, PTC traffic, hitleap, jingling, etc;</p>
+                        </li>
+                        <li>
+                        <p>Automatically redirect to your shortened url from a website. The viewer must click on the link him/herself;</p>
+                        </li>
+                        <li>
+                        <p>Open your shortened URLs using an iframe or popups/popunder;</p>
+                        </li>
+                        <li>
+                        <p>Click on your own shortened urls to generate revenue. We reserve the right to not pay for the revenue generated;</p>
+                        </li>
+                        <li>
+                        <p>Create 'redirect loops' with&nbsp;Wann.fun URLs or similar services to generate revenue;</p>
+                        </li>
+                        <li>
+                        <p>Create multiple accounts. Only one account per person is allowed;</p>
+                        </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
         
+        {{-- Ad srcipts --}}
+        {{-- Banner --}}
+        <script src="//mediapalmtree.com/bn-script.js?t=1627242299" data-ts="1627242300" data-domain='gecontentasap.com' data-cdn-domain='mediapalmtree.com' data-promo-cdn='mediapalmtree.com' data-pl-token='1d1635376a82f4ef54e5d450cbfaa568c7c8dc5e' data-target='nw' data-freq='oncePer2Minutes' data-place-id='id_banner_affi' ></script>
+
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
