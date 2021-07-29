@@ -204,7 +204,7 @@
         <div id="id_banner_affi" style="width: 768px; margin-left: auto; margin-right: auto;">Consider turning off AdBlock to support our free web-service!</div>
 
         {{-- Direct --}}
-        <a href="https://b3stcond1tions.com/ETroT26085356c712e243962b10d707cd6a5bcd7d1a9e?q={QUERY}">123</a>
+        
 
         <!-- Icons Grid-->
         <section class="features-icons bg-light text-center">
