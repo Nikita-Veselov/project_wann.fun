@@ -40,7 +40,7 @@ class RegistrationController extends Controller
         $user = User::create(request(['name', 'email', 'password']));
 
         Auth::login($user);
-
+        
         return back()->with('success', 'Registered new user "' . $user['name'] . '" successfully!');
     }
 

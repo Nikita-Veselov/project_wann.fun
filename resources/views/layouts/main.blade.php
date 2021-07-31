@@ -141,7 +141,7 @@
 
                             @if(session()->has('success'))
                                 <div class="alert alert-success">{{ session()->get('success') }}</div>
-                                @if(session()->has('url'))
+                                @if(session()->has('url') && !empty(session('url')) )
                                 <div class="alert alert-info">{{ session()->get('url') }}</div>
                                 @endif
                             @endif
