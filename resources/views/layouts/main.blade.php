@@ -138,7 +138,7 @@
                         <div class="text-center text-white">
                             <!-- Page heading-->
                             <h1 class="custom-font mb-5">Create your new short URL!</h1>
-                            {{-- {{ dd(session()->get('url')) }} --}}
+                            {{ dd(session()->get('url')) }}
                             @if(session()->has('success'))
                                 <div class="alert alert-success">{{ session()->get('success') }}</div>
                                 @if(!empty(session()->get('url')))
