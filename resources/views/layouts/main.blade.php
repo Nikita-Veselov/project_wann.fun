@@ -183,12 +183,15 @@
                                         <option><div class="">kiss_me</div></option>
                                         <option><div class="">wanna_date_me</div></option>
                                         <option><div class="">please_date_me</div></option>
+                                        <option><div class="">chill_with_me</div></option>
                                         <option><div class="">my_photos</div></option>
+                                        <option><div class="">my_pics</div></option>
                                         <option><div class="">pills</div></option>
                                         <option><div class="">magic_pills</div></option>
                                         <option><div class="">power_pills</div></option>
                                         <option><div class="">gel</div></option>
                                         <option><div class="">super_gel</div></option>
+                                        <option><div class="">get_size</div></option>
                                     </select>
                                 
                                     <button 
