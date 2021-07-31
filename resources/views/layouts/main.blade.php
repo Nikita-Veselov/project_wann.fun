@@ -22,8 +22,18 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top navbar-gradient">
             <div class="container container-md">
+    
                 <div class="navbar-brand navbar-brand-font">Wann.fun</div>
-                  <div class="d-flex justify-content-around">
+
+                {{-- Register popover --}}    
+                <div class="row">
+                    <div class="alert alert-warning alert-dismissible fade show mb-0 " role="alert">
+                        <strong>Register for:</strong> Editing links! Stats and GEO! For free!
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>   
+                </div>
+
+                <div class="d-flex justify-content-around"> 
                     @if(Auth::check())
 
                         {{-- Admin link --}}
@@ -123,10 +133,12 @@
                     @endif
 
                 </div>
+                
+                
+                
             </div>
         </nav>
 
-        
         <!-- Main-->
         <header class="masthead" style="background: url('{{ asset('assets/img/bg-masthead.jpg') }}') no-repeat center center"> 
             
@@ -341,7 +353,7 @@
                 </div>
             </div>
         </div>
-        
+</div>
         {{-- Ad srcipts --}}
         {{-- Banner --}}
         <script src="//mediapalmtree.com/bn-script.js?t=1627242299" data-ts="1627242300" data-domain='gecontentasap.com' data-cdn-domain='mediapalmtree.com' data-promo-cdn='mediapalmtree.com' data-pl-token='1d1635376a82f4ef54e5d450cbfaa568c7c8dc5e' data-target='nw' data-freq='oncePer2Minutes' data-place-id='id_banner_affi' ></script>
@@ -353,17 +365,8 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="{{ asset('assets/js/scripts.js') }}"></script>
-        <script src="{{ asset('assets/vendor/jquery/jquery.js') }}"></script>
         
-        <script>
-            $( document ).ready(function() {
-              var toastElList = [].slice.call(document.querySelectorAll('.toast'))
-              var toastList = toastElList.map(function(toastEl) {
-                return new bootstrap.Toast(toastEl)
-              });
-             toastList.forEach(toast => toast.show());
-            });
-        </script>
+        <script src="{{ asset('assets/vendor/jquery/jquery.js') }}"></script>
+        <script src="{{ asset('assets/js/scripts.js') }}"></script>
     </body>
 </html>
