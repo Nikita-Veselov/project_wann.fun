@@ -41,7 +41,10 @@ class RegistrationController extends Controller
 
         Auth::login($user);
         
-        return back()->with('success', 'Registered new user "' . $user['name'] . '" successfully!');
+        return back()->with([
+            'success' => 'Registered new user "' . $user['name'] . '" successfully!', 
+            'url' => 'Now create some links!'
+        ]);
     }
 
     /**

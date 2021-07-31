@@ -58,7 +58,7 @@ class LinkController extends Controller
             $input['input_url'] = "wann.fun/" . $input['input_url'];
             
             return redirect()->action([LinkController::class, 'index'])->with([
-                'success'=> 'Link created successfully!',
+                'success' => 'Link created successfully!',
                 'url' => $input["input_url"]
             ]);
         }
