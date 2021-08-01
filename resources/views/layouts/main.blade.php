@@ -369,8 +369,6 @@
         {{-- Ad srcipts --}}
         {{-- Banner --}}
         <script src="//mediapalmtree.com/bn-script.js?t=1627242299" data-ts="1627242300" data-domain='gecontentasap.com' data-cdn-domain='mediapalmtree.com' data-promo-cdn='mediapalmtree.com' data-pl-token='1d1635376a82f4ef54e5d450cbfaa568c7c8dc5e' data-target='nw' data-freq='oncePer2Minutes' data-place-id='id_banner_affi' ></script>
-        {{-- popunder --}}
-        <script src="//mediapalmtree.com/pu-script.js?t=1627571971" data-ts="1627571971" data-domain='gecontentasap.com' data-cdn-domain='mediapalmtree.com' data-promo-cdn='mediapalmtree.com' data-pl-token='0e0ebb7203440d5e3351d914815ca69f084005ca' data-type='under' data-freq-global='false' data-do-prevent='false' data-deactivate-click-only='false' data-is-est-rotation='false' ></script>
         
         {{-- Popper --}}
         <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
