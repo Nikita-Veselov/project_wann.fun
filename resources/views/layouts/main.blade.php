@@ -17,14 +17,15 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet" />
     
-            <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4TLD1DNGJ2"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-3YV643GP6L"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config', 'G-4TLD1DNGJ2');
+            gtag('config', 'G-3YV643GP6L');
         </script>
     </head>
     <body>
@@ -152,8 +153,6 @@
         <!-- Main-->
         <header class="masthead" style="background: url('{{ asset('assets/img/bg-masthead.jpg') }}') no-repeat center center"> 
             
-            
-
             <div class="container position-relative">   
                 <div class="row justify-content-center">
                     <div class="col-xl-6">
