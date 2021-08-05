@@ -227,10 +227,43 @@
             </div>
         </header>
 
+        
         {{-- Ads --}}
-        <div id="id_banner_affi" style="width: 768px; margin-left: auto; margin-right: auto;">Consider turning off AdBlock to support our free web-service!</div>
-
-        {{-- Direct --}}
+            {{-- Direct --}}
+        {{-- <a href="https://hypevpnddl.com/M3rXt5af71800a227e52cb1ede0b1ecc3563c1ccab2ca">
+        <div class="container-fluid" style="background-color: rgb(130, 190, 102)">
+            <div class="row">
+                <div class="col-12 "><img class="img-fluid mx-auto d-block" src="{{ asset('assets/img/test-ad.jpg') }}" alt="..." /></div>
+            </div>   
+        </div>
+        </a> --}}
+ 
+        <a href="https://hypevpnddl.com/M3rXt5af71800a227e52cb1ede0b1ecc3563c1ccab2ca" class="text-decoration-none text-reset">
+            <div class="container-fluid text-reset" style="background-color: rgb(135, 170, 118)">
+                <div class="row row-cols-auto justify-content-center">
+                    <div class="col py-2">
+                        <img class="" src="{{ asset('assets/img/test-logo.png') }}" alt="..." />
+                    </div>
+                    <div class="col py-2 bg-light border-end border-start border-info border-5">
+                        <div class="row row-cols-auto align-items-center mt-1">
+                            <div class="col-12 col-sm-3 fs-2 fw-bold text-center" style="color: rebeccapurple">Best VPN</div>
+                            <div class="custom-font col-12 col-sm fs-6 fw-light text-center text-break">
+                                180 Days Free! 
+                                VPN Award Winner 2021! 
+                                Limited Time Offer!
+                            </div>
+                            <div class="col-12 col-sm-3">
+                                <button type="button" class="btn btn-success mx-auto d-block">More info</button> 
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+        </a>
+            {{-- Banner --}}
+        {{-- <div id="id_banner_affi" style="width: 768px; margin-left: auto; margin-right: auto;">Consider turning off AdBlock to support our free web-service!</div> --}}
+        
+        
         
 
         <!-- Icons Grid-->
@@ -365,10 +398,10 @@
                 </div>
             </div>
         </div>
-</div>
+
         {{-- Ad srcipts --}}
         {{-- Banner --}}
-        <script src="//mediapalmtree.com/bn-script.js?t=1627242299" data-ts="1627242300" data-domain='gecontentasap.com' data-cdn-domain='mediapalmtree.com' data-promo-cdn='mediapalmtree.com' data-pl-token='1d1635376a82f4ef54e5d450cbfaa568c7c8dc5e' data-target='nw' data-freq='oncePer2Minutes' data-place-id='id_banner_affi' ></script>
+        {{-- <script src="//mediapalmtree.com/bn-script.js?t=1627242299" data-ts="1627242300" data-domain='gecontentasap.com' data-cdn-domain='mediapalmtree.com' data-promo-cdn='mediapalmtree.com' data-pl-token='1d1635376a82f4ef54e5d450cbfaa568c7c8dc5e' data-target='nw' data-freq='oncePer2Minutes' data-place-id='id_banner_affi' ></script> --}}
         
         {{-- Popper --}}
         <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
