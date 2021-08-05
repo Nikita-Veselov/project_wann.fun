@@ -336,10 +336,11 @@
                     <div class="col-12 h-100 text-center my-auto">
                         <ul class="list-inline mb-2">
                             <li class="list-inline-item">Email: <a href="mailto:admin@wann.fun" class="text-decoration-none link-light">admin@wann.fun </a></li>
-                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item">DMCA: <a href="mailto:dmca@wann.fun" class="text-decoration-none link-light">dmca@wann.fun </a></li>
                             <li class="list-inline-item">Partners: 
                                 <a href="https://lambushka.media" class="text-decoration-none link-light">Lambushka</a> |
-                                <a href="https://chikikliki.com" class="text-decoration-none link-light">Chikikliki</a>
+                                <a href="https://chikikliki.com" class="text-decoration-none link-light">Chikikliki</a> |
+                                <a href="https://hypevpn.org" class="text-decoration-none link-light">Hype VPN</a> 
                             </li>
                         </ul>
                         <p><a href="" data-bs-toggle="modal" data-bs-target="#modal-terms" class="text-decoration-none link-info">Terms of service</a></p>
