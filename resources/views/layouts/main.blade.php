@@ -100,7 +100,7 @@
                                         
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Sign in</button>
+                                    <button type="submit" class="btn btn-primary">Log in</button>
                                 </form>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Forgot password?</a>
@@ -136,7 +136,7 @@
                                         <label for="password_confirmation" class="form-label">Password Confirmation</label>
                                         <input type="password" class="form-control" name="password_confirmation" placeholder="Password Confirmation">
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Sign in</button>
+                                    <button type="submit" class="btn btn-primary">Sign Up</button>
                                 </form>
                             </div>
 
@@ -238,6 +238,10 @@
         </div>
         </a> --}}
  
+        
+            {{-- Banner --}}
+        {{-- <div id="id_banner_affi" style="width: 768px; margin-left: auto; margin-right: auto;">Consider turning off AdBlock to support our free web-service!</div> --}}
+        
         <a href="https://hypevpnddl.com/M3rXt5af71800a227e52cb1ede0b1ecc3563c1ccab2ca" class="text-decoration-none text-reset">
             <div class="container-fluid text-reset" style="background-color: rgb(135, 170, 118)">
                 <div class="row row-cols-auto justify-content-center">
@@ -260,10 +264,6 @@
                 </div>   
             </div>
         </a>
-            {{-- Banner --}}
-        {{-- <div id="id_banner_affi" style="width: 768px; margin-left: auto; margin-right: auto;">Consider turning off AdBlock to support our free web-service!</div> --}}
-        
-        
         
 
         <!-- Icons Grid-->
