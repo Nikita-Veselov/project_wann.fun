@@ -10,7 +10,7 @@
 
 @section('content')
     <h1>GREAT AND GLORIOUS ADMIN PAGE!</h1>
-    <div>RegisterEd users:{{ $users->count() }}</div>
+    <div>Registered users:{{ $users->count() }}</div>
     
     <div>Created links:{{ $links->count() }}</div>
     <div>All-time unique visitors:{{ $visitors->count() }}</div>

@@ -39,7 +39,7 @@
                 {{-- Register popover --}}    
                 <div class="row">
                     <div class="alert alert-warning alert-dismissible fade show mb-0 " role="alert">
-                        <strong>Register for:</strong> Editing links! Stats and GEO! For free!
+                        <strong>Sign up</strong> for full link customization and detailed statistics!
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>   
                 </div>
