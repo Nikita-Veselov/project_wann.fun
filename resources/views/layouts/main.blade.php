@@ -237,8 +237,9 @@
             </div>   
         </div>
         </a> --}}
- 
-        
+            {{-- Push AD --}}
+        <script src="//mediapalmtree.com/v2/loader.js?_t=54278" data-ts="1628343223" data-token="3150f81d199f26a4b148c34b436b9e34928ae593" data-am="true" data-promo-cdn="mediapalmtree.com"></script>
+         
             {{-- Banner --}}
         {{-- <div id="id_banner_affi" style="width: 768px; margin-left: auto; margin-right: auto;">Consider turning off AdBlock to support our free web-service!</div> --}}
         
