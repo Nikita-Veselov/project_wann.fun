@@ -7,7 +7,7 @@
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 
-        <title>Wann.fun - short URL's for you</title>
+        <title>Wann.fun - first URL shortener for social media monetization</title>
         
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
@@ -33,117 +33,133 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top navbar-gradient">
             <div class="container container-md">
-    
-                <div class="navbar-brand navbar-brand-font">Wann.fun</div>
+                <div class="row justify-content-evenly align-items-center">
+                    <div class="col-12 col-lg py-2 py-lg-0">
+                        <div class="row">
+                            <div class="col-12 navbar-brand-font text-center" style="font-size: 3.5rem">Wann.fun</div>
+                            <div class="col-12 fs-6 fw-light fst-italic text-center">First URL shortener for social media monetization.</div>
+                        </div>
+                    </div>  
 
-                {{-- Register popover --}}    
-                <div class="row">
-                    <div class="alert alert-warning alert-dismissible fade show mb-0 " role="alert">
-                        <strong>Sign up</strong> for full link customization and detailed statistics!
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>   
-                </div>
+                    <div class="col-12 col-lg py-2 py-lg-0">
+                        <div class="row ">
+                            <div class="alert alert-warning alert-dismissible fade show mb-0 " role="alert">
+                                <strong>Sign up for full link customization and detailed statistics!</strong>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>   
+                        </div>
+                    </div> 
 
-                <div class="d-flex justify-content-around"> 
-                    @if(Auth::check())
+                    <div class="col-12 col-lg py-2 py-lg-0">
+                        {{-- Register popover --}}    
+                
+                        <div class="d-flex justify-content-center"> 
+                            @if(Auth::check())
 
-                        {{-- Admin link --}}
-                        @if( in_array(Auth::user()->name, $admins) )
-                            
+                                {{-- Admin link --}}
+                                @if( in_array(Auth::user()->name, $admins) )
+                                    
+                                        <div class="px-3">
+                                            <form method="get" action="/admin">
+                                                <button class="btn btn-primary custom-font" type="submit">Admin</button>
+                                            </form>
+                                        </div>    
+                                    
+                                @endif
+
+                                <!-- Profile link -->
                                 <div class="px-3">
-                                    <form method="get" action="/admin">
-                                        <button class="btn btn-primary custom-font" type="submit">Admin</button>
+                                    <form method="get" action="/profile">
+                                        <button class="btn btn-primary custom-font" type="submit">Profile</button>
                                     </form>
-                                </div>    
-                            
-                        @endif
+                                </div>
+                                <!-- Leave link -->
+                                <div class="px-3">
+                                    <form method="get" action="/login">
+                                        <button class="btn btn-primary custom-font" type="submit">Log Out</button>
+                                    </form>
+                                </div>
+                            @else
+                                <!-- Login form -->
+                                <div class="px-3 dropdown">
+                                    <button 
+                                        class="btn btn-primary dropdown-toggle custom-font" 
+                                        data-bs-toggle="dropdown" 
+                                        aria-expanded="false"
+                                        data-bs-auto-close="outside"
+                                    >
+                                        Log In
+                                    </button>
 
-                        <!-- Profile link -->
-                        <div class="px-3">
-                            <form method="get" action="/profile">
-                                <button class="btn btn-primary custom-font" type="submit">Profile</button>
-                            </form>
-                        </div>
-                        <!-- Leave link -->
-                        <div class="px-3">
-                            <form method="get" action="/login">
-                                <button class="btn btn-primary custom-font" type="submit">Log Out</button>
-                            </form>
-                        </div>
-                    @else
-                        <!-- Login form -->
-                        <div class="px-3 dropdown">
-                            <button 
-                                class="btn btn-primary dropdown-toggle custom-font" 
-                                data-bs-toggle="dropdown" 
-                                aria-expanded="false"
-                                data-bs-auto-close="outside"
-                            >
-                                Log In
-                            </button>
+                                    <div class="dropdown-menu dropdown-menu-md-end dropdown-menu-start">
+                                        <form class="px-4 py-3" style="width: 15rem;" method="POST" action="/login">
+                                            @csrf
+                                            <div class="mb-3">
+                                                <label for="email" class="form-label">Email</label>
+                                                <input type="email" class="form-control" name="email" placeholder="Email">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="password" class="form-label">Password</label>
+                                                <input type="password" class="form-control" name="password" placeholder="Password">
+                                            </div>
+                                            <div class="mb-3">
+                                                <div class="form-check">
+                                                <label class="form-check-label" for="remember" >Remember me</label>   
+                                                <input type="checkbox" class="form-check-input" name="remember">
+                                                
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Log in</button>
+                                        </form>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Forgot password?</a>
+                                    </div>
+                                </div>
+                                <!-- Registration form -->
+                                <div class="px-3 dropdown">
+                                    <button 
+                                        class="btn btn-primary dropdown-toggle custom-font" 
+                                        data-bs-toggle="dropdown" 
+                                        aria-expanded="false"
+                                        data-bs-auto-close="outside"
+                                    >
+                                        Sign Up
+                                    </button>
 
-                            <div class="dropdown-menu dropdown-menu-md-end dropdown-menu-start">
-                                <form class="px-4 py-3" style="width: 15rem;" method="POST" action="/login">
-                                    @csrf
-                                    <div class="mb-3">
-                                        <label for="email" class="form-label">Email</label>
-                                        <input type="email" class="form-control" name="email" placeholder="Email">
+                                    <div class="dropdown-menu dropdown-menu-end">
+                                        <form class="px-4 py-3" style="width: 15rem;" method="POST" action="/registration">
+                                            @csrf
+                                            <div class="mb-3">
+                                                <label for="name" class="form-label">Name</label>
+                                                <input type="text" class="form-control" name="name" placeholder="Name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="email" class="form-label">Email address</label>
+                                                <input type="email" class="form-control" name="email" placeholder="email@example.com">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="password" class="form-label">Password</label>
+                                                <input type="password" class="form-control" name="password" placeholder="Password">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="password_confirmation" class="form-label">Password Confirmation</label>
+                                                <input type="password" class="form-control" name="password_confirmation" placeholder="Password Confirmation">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Sign Up</button>
+                                        </form>
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="password" class="form-label">Password</label>
-                                        <input type="password" class="form-control" name="password" placeholder="Password">
-                                    </div>
-                                    <div class="mb-3">
-                                        <div class="form-check">
-                                        <label class="form-check-label" for="remember" >Remember me</label>   
-                                        <input type="checkbox" class="form-check-input" name="remember">
-                                        
-                                        </div>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Log in</button>
-                                </form>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Forgot password?</a>
-                            </div>
-                        </div>
-                        <!-- Registration form -->
-                        <div class="px-3 dropdown">
-                            <button 
-                                class="btn btn-primary dropdown-toggle custom-font" 
-                                data-bs-toggle="dropdown" 
-                                aria-expanded="false"
-                                data-bs-auto-close="outside"
-                            >
-                                Sign Up
-                            </button>
 
-                            <div class="dropdown-menu dropdown-menu-end">
-                                <form class="px-4 py-3" style="width: 15rem;" method="POST" action="/registration">
-                                    @csrf
-                                    <div class="mb-3">
-                                        <label for="name" class="form-label">Name</label>
-                                        <input type="text" class="form-control" name="name" placeholder="Name">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="email" class="form-label">Email address</label>
-                                        <input type="email" class="form-control" name="email" placeholder="email@example.com">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="password" class="form-label">Password</label>
-                                        <input type="password" class="form-control" name="password" placeholder="Password">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="password_confirmation" class="form-label">Password Confirmation</label>
-                                        <input type="password" class="form-control" name="password_confirmation" placeholder="Password Confirmation">
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Sign Up</button>
-                                </form>
-                            </div>
+                                </div>
+                            @endif
 
                         </div>
-                    @endif
-
+                    </div>  
                 </div>
+                
+                
+                
+
+                
                 
                 
                 
@@ -273,27 +289,29 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex"><i class="bi-window m-auto text-primary"></i></div>
-                            <h3>Adjustable size</h3>
+                            <div class="features-icons-icon d-flex"><img class="mx-auto" src="{{ asset('assets/img/icon_1.png') }}" alt=""></div>
+                            <h3>Built specially for marketing tasks</h3>
                             <p class="lead mb-0">
-                                Your links will look great on any device, no matter the size!
+                                The first URL Shortener created for social media traffic monetization!
                             </p>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex"><i class="bi-layers m-auto text-primary"></i></div>
-                            <h3>Statistics ready</h3>
+                            <div class="features-icons-icon d-flex"><img class="mx-auto" src="{{ asset('assets/img/icon_2.png') }}" alt=""></div>
+                            <h3>Full link customization</h3>
                             <p class="lead mb-0">
-                                Log in and check the statistics of your link at any time! Including geo, timstamps and more.
+                                Sign up and get access to the advanced functionality: make your own links with unique text and pull up full stats for each link you created as well!
                             </p>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex"><i class="bi-terminal m-auto text-primary"></i></div>
-                            <h3>Easy to Use</h3>
-                            <p class="lead mb-0">Ready to use with any of your links or customize it for your personal needs!</p>
+                            <div class="features-icons-icon d-flex"><img class="mx-auto" src="{{ asset('assets/img/icon_3.png') }}" alt=""></div>
+                            <h3>Links work stably with all dating apps, messengers and chat services</h3>
+                            <p class="lead mb-0">
+                                Steady and swift link performance on any platform guaranteed!
+                            </p>
                         </div>
                     </div>
                 </div>
