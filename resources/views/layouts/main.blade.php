@@ -37,7 +37,7 @@
                     <div class="col-12 col-lg py-2 py-lg-0">
                         <div class="row">
                             <div class="col-12 navbar-brand-font text-center" style="font-size: 3.5rem">Wann.fun</div>
-                            <div class="col-12 fs-6 fw-light fst-italic text-center">First URL shortener for social media monetization.</div>
+                            <div class="col-12 fs-6 fst-italic fw-bolder text-center text-black-50">First URL shortener for social media monetization.</div>
                         </div>
                     </div>  
 
@@ -289,7 +289,9 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex"><img class="mx-auto" src="{{ asset('assets/img/icon_1.png') }}" alt=""></div>
+                            <div class="features-icons-icon d-flex">
+                                <img class="mx-auto" src="{{ asset('assets/img/icon_1.png') }}" alt="" style="width: 7rem;">
+                            </div>
                             <h3>Built specially for marketing tasks</h3>
                             <p class="lead mb-0">
                                 The first URL Shortener created for social media traffic monetization!
@@ -298,7 +300,9 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex"><img class="mx-auto" src="{{ asset('assets/img/icon_2.png') }}" alt=""></div>
+                            <div class="features-icons-icon d-flex">
+                                <img class="mx-auto" src="{{ asset('assets/img/icon_2.png') }}" alt="" style="width: 7rem;">
+                            </div>
                             <h3>Full link customization</h3>
                             <p class="lead mb-0">
                                 Sign up and get access to the advanced functionality: make your own links with unique text and pull up full stats for each link you created as well!
@@ -307,7 +311,9 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex"><img class="mx-auto" src="{{ asset('assets/img/icon_3.png') }}" alt=""></div>
+                            <div class="features-icons-icon d-flex">
+                                <img class="mx-auto" src="{{ asset('assets/img/icon_3.png') }}" alt="" style="width: 7rem;">
+                            </div>
                             <h3>Links work stably with all dating apps, messengers and chat services</h3>
                             <p class="lead mb-0">
                                 Steady and swift link performance on any platform guaranteed!
