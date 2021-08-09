@@ -294,7 +294,7 @@
                             </div>
                             <h3>Built specially for marketing tasks</h3>
                             <p class="lead mb-0">
-                                The first URL Shortener created for fast and effective dating and nutra campaigns!
+                                The first URL shortener able to make your dating or nutra promo link as clickable as possible!
                             </p>
                         </div>
                     </div>
@@ -314,9 +314,9 @@
                             <div class="features-icons-icon d-flex">
                                 <img class="mx-auto" src="{{ asset('assets/img/icon_3.png') }}" alt="" style="width: 7rem;">
                             </div>
-                            <h3>Links work stably with all dating apps, messengers and chat services</h3>
+                            <h3>Steady and swift</h3>
                             <p class="lead mb-0">
-                                Steady and swift link performance on any platform guaranteed!
+                                Links work stably with all dating apps, messengers and chat services - instant redirection with no ads integrated in the generated link!
                             </p>
                         </div>
                     </div>
@@ -383,7 +383,9 @@
                         <h2 class="modal-title text-center" id="ModalLabel">Terms of Use</h2>
                     </div>
                     <div class="modal-body">
-                        <p>This Site allows publishers to shorten any URL and earn income by sharing the shortened URL. Advertising is shown to the viewer on their way to their destination URL. By using the Site's service, you agree that the Site includes advertisements on the shortened URLs which is a requirement for the Site to operate.</p>
+                        <p>This Site allows publishers to shorten any URL and earn income by sharing the shortened URL. 
+                            {{-- Advertising is shown to the viewer on their way to their destination URL. By using the Site's service, you agree that the Site includes advertisements on the shortened URLs which is a requirement for the Site to operate. --}}
+                        </p>
                         <p>By using the Site's service, you agree&nbsp;<strong>not&nbsp;</strong>to:</p>
                         <ol>
                         <li>
