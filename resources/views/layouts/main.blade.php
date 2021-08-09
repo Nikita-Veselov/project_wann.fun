@@ -7,7 +7,7 @@
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 
-        <title>Wann.fun - first URL shortener for social media monetization</title>
+        <title>Wann.fun - URL Shortener for dating and nutra ads</title>
         
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
@@ -294,7 +294,7 @@
                             </div>
                             <h3>Built specially for marketing tasks</h3>
                             <p class="lead mb-0">
-                                The first URL Shortener created for social media traffic monetization!
+                                The first URL Shortener created for fast and effective dating and nutra campaigns!
                             </p>
                         </div>
                     </div>
