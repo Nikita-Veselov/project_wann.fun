@@ -37,7 +37,7 @@
                     <div class="col-12 col-lg py-2 py-lg-0">
                         <div class="row">
                             <div class="col-12 navbar-brand-font text-center" style="font-size: 3.5rem">Wann.fun</div>
-                            <div class="col-12 fs-6 fst-italic fw-bolder text-center text-black-50">First URL shortener for social media monetization.</div>
+                            <div class="col-12 fs-6 fst-italic fw-bolder text-center text-black-50">Custom URL shortener for effective promotion of dating and nutra offers</div>
                         </div>
                     </div>  
 
