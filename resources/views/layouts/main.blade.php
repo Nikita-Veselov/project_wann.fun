@@ -4,10 +4,13 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="author" content="Nikita-Veselov" />
+        <meta name="description" content="Generate short link ideal for Dating and Nutra ad verticals. Create your own topical custom short link for your profitable ad campaign." />
+        <meta name="keywords" content="url shortener, custom short url, link short, generate short link, dating offers, nutra offers" />
+        
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 
-        <title>Wann.fun - URL Shortener for dating and nutra ads</title>
+        <title>Free Custom URL Shortener for Dating and Nutra ads | Wann.fun</title>
         
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
