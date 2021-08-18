@@ -218,8 +218,10 @@
                                         <option><div class="">magic_pills</div></option>
                                         <option><div class="">power_pills</div></option>
                                         <option><div class="">gel</div></option>
+                                        <option><div class="">titan_gel</div></option>
                                         <option><div class="">super_gel</div></option>
                                         <option><div class="">get_size</div></option>
+                                        <option><div class="">get_size_you_deserve</div></option>
                                     </select>
                                 
                                     <button 
