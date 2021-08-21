@@ -15,30 +15,35 @@
     <div>Created links:{{ $links->count() }}</div>
     <div>All-time unique visitors:{{ $visitors->count() }}</div>
     <div>Unique visitors today:{{ $visitorsToday->count() }}</div>
-    
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    <x-graph :data="$chart_data" />
+    <div>All time clicks on our links:{{ $clicks->count() }}</div>
+    <div class="row">
+        <div class="col-12 col-lg-8 px-2">
+            <div class="py-12">
+                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                        <div class="p-6 bg-white border-b border-gray-200">
+                            <x-graph :data="$chart_data" />
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </div>    
+        </div>
+
+        <div class="col-12 col-lg-4">
+            <table>
+                <tr>
+                    <th>Geo Mark</th>
+                    <th>Number of Visitors</th>
+                </tr>
+                
+                @foreach ($visitorsCount as $country => $visitor)
+                    <tr>
+                        <td>{{ $country }}</td>
+                        <td>{{ $visitor }}</td>
+                    </tr> 
+                @endforeach
+            </table>     
         </div>
     </div>
-    <table>
-        <tr>
-            <th>Geo Mark</th>
-            <th>Number of Visitors</th>
-        </tr>
-        
-        @foreach ($visitorsCount->chunk(1) as $country)
-
-        <tr>
-            <td>{{ $country->keys() }}</td>
-            <td>{{ $country->values() }}</td>
-        </tr>   
-        @endforeach
-    </table>
 
 @endsection

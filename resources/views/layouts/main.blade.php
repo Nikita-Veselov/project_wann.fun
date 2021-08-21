@@ -158,18 +158,13 @@
                         </div>
                     </div>  
                 </div>
-                
-                
-                
-
-                
-                
-                
-                
             </div>
         </nav>
 
         <!-- Main-->
+
+        {{-- Git PAT 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 --}}
+
         <header class="masthead" style="background: url('{{ asset('assets/img/bg-masthead.jpg') }}') no-repeat center center"> 
             
             <div class="container-fluid position-relative">   
