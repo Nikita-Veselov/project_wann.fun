@@ -11,7 +11,9 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 
         <title>Free Custom URL Shortener for Dating and Nutra ads | Wann.fun</title>
-        
+
+{{-- Git PAT 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 --}}
+
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
         <!-- Google fonts-->
@@ -163,7 +165,7 @@
 
         <!-- Main-->
 
-        {{-- Git PAT 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 --}}
+        
 
         <header class="masthead" style="background: url('{{ asset('assets/img/bg-masthead.jpg') }}') no-repeat center center"> 
             
@@ -201,22 +203,10 @@
                                         name="output_url"
                                     />
 
-                                    <select name="input_url">
-                                        <option><div class="active">date_me</div></option>
-                                        <option><div class="">kiss_me</div></option>
-                                        <option><div class="">wanna_date_me</div></option>
-                                        <option><div class="">please_date_me</div></option>
-                                        <option><div class="">chill_with_me</div></option>
-                                        <option><div class="">my_photos</div></option>
-                                        <option><div class="">my_pics</div></option>
-                                        <option><div class="">pills</div></option>
-                                        <option><div class="">magic_pills</div></option>
-                                        <option><div class="">power_pills</div></option>
-                                        <option><div class="">gel</div></option>
-                                        <option><div class="">titan_gel</div></option>
-                                        <option><div class="">super_gel</div></option>
-                                        <option><div class="">get_size</div></option>
-                                        <option><div class="">get_size_you_deserve</div></option>
+                                    <select class="custom-font col-3" name="input_url">
+                                        @foreach ($linkOptions as $option)
+                                            <option class="custom-font">{{ $option }}</option>
+                                        @endforeach
                                     </select>
                                 
                                     <button 

@@ -22,8 +22,10 @@ class LinkController extends Controller
      */
     public function index()
     {
-        $admins = (new Controller)->admins;
-        return view('main', ['admins' => $admins]);
+        $ctr = new Controller;
+        $admins = $ctr->admins;
+        $linkOptions = $ctr->linkOptions;
+        return view('main', ['admins' => $admins, 'linkOptions' => $linkOptions]);
     }
 
     /**

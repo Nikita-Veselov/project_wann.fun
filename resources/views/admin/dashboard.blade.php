@@ -16,8 +16,10 @@
     <div>All-time unique visitors:{{ $visitors->count() }}</div>
     <div>Unique visitors today:{{ $visitorsToday->count() }}</div>
     <div>All time clicks on our links:{{ $clicks->count() }}</div>
+
     <div class="row">
-        <div class="col-12 col-lg-8 px-2">
+        {{-- unique visitors chart --}}
+        <div class="p-2 col-12 col-lg-6">
             <div class="py-12">
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -28,22 +30,46 @@
                 </div>
             </div>    
         </div>
-
-        <div class="col-12 col-lg-4">
-            <table>
-                <tr>
-                    <th>Geo Mark</th>
-                    <th>Number of Visitors</th>
-                </tr>
-                
-                @foreach ($visitorsCount as $country => $visitor)
+        {{-- Number of links by used finisher --}}
+        <div class="p-2 col-6 col-lg-3">
+            <table class="table table-sm table-stripped table-bordered">
+                <thead>
                     <tr>
-                        <td>{{ $country }}</td>
-                        <td>{{ $visitor }}</td>
-                    </tr> 
-                @endforeach
+                        <th>Option</th>
+                        <th>Number </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($linkOptionsCount as $option)
+                        @foreach ($option as $link => $number)
+                        <tr>
+                            <td>{{ $link }}</td>
+                            <td>{{ $number }}</td>
+                        </tr> 
+                        @endforeach
+                    @endforeach
+                </tbody>
             </table>     
         </div>
-    </div>
+        {{-- unique visitors by geo (first 15) --}}
+        <div class="p-2 col-6 col-lg-3">
+            <table class="table table-sm table-stripped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Geo Mark</th>
+                        <th>Number of Visitors</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($visitorsCount->sortDesc()->forPage(1,15) as $country => $visitor)
+                        <tr>
+                            <td>{{ $country }}</td>
+                            <td>{{ $visitor }}</td>
+                        </tr> 
+                    @endforeach
+                </tbody>
+            </table>     
+        </div>
+    </div>  
 
 @endsection
