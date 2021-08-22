@@ -12,8 +12,6 @@
 
         <title>Free Custom URL Shortener for Dating and Nutra ads | Wann.fun</title>
 
-{{-- Git PAT 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 --}}
-
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
         <!-- Google fonts-->
@@ -39,6 +37,7 @@
         <nav class="navbar navbar-light bg-light static-top navbar-gradient">
             <div class="container container-md">
                 <div class="row justify-content-evenly align-items-center">
+                    {{-- Title --}}
                     <div class="col-12 col-lg py-2 py-lg-0">
                         <div class="row">
                             <div class="col-12 navbar-brand-font text-center" style="font-size: 3.5rem">Wann.fun</div>
@@ -46,6 +45,7 @@
                         </div>
                     </div>  
 
+                    {{-- Alert --}}
                     <div class="col-12 col-lg py-2 py-lg-0">
                         <div class="row ">
                             <div class="alert alert-warning alert-dismissible fade show mb-0 " role="alert">
@@ -55,23 +55,20 @@
                         </div>
                     </div> 
 
+                    {{-- Button group --}}
                     <div class="col-12 col-lg py-2 py-lg-0">
                         {{-- Register popover --}}    
                 
                         <div class="d-flex justify-content-center"> 
                             @if(Auth::check())
-
                                 {{-- Admin link --}}
                                 @if( in_array(Auth::user()->name, $admins) )
-                                    
-                                        <div class="px-3">
-                                            <form method="get" action="/admin">
-                                                <button class="btn btn-primary custom-font" type="submit">Admin</button>
-                                            </form>
-                                        </div>    
-                                    
+                                    <div class="px-3">
+                                        <form method="get" action="/admin">
+                                            <button class="btn btn-primary custom-font" type="submit">Admin</button>
+                                        </form>
+                                    </div>    
                                 @endif
-
                                 <!-- Profile link -->
                                 <div class="px-3">
                                     <form method="get" action="/profile">
@@ -117,7 +114,9 @@
                                             <button type="submit" class="btn btn-primary">Log in</button>
                                         </form>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Forgot password?</a>
+                                     
+                                        <a href="" data-bs-toggle="modal" data-bs-target="#modal-resetPassword" class="px-3 text-reset text-decoration-none">Forgot Password?</a>
+                              
                                     </div>
                                 </div>
                                 <!-- Registration form -->
@@ -163,10 +162,7 @@
             </div>
         </nav>
 
-        <!-- Main-->
-
-        
-
+        {{-- Main --}}
         <header class="masthead" style="background: url('{{ asset('assets/img/bg-masthead.jpg') }}') no-repeat center center"> 
             
             <div class="container-fluid position-relative">   
@@ -181,7 +177,9 @@
                                     <div class="alert alert-info">{{ session()->get('url') }}</div>
                                 @endif
                             @endif
-
+                            @if(session()->has('email'))
+                                <div class="alert alert-danger">{{ session()->get('email') }}</div>
+                            @endif
                             @if($errors->any())
                                 @foreach ($errors->all() as $error)
                                     <div class="alert alert-danger">{{ $error }}</div>
@@ -235,20 +233,7 @@
 
         
         {{-- Ads --}}
-            {{-- Direct --}}
-        {{-- <a href="https://hypevpnddl.com/M3rXt5af71800a227e52cb1ede0b1ecc3563c1ccab2ca">
-        <div class="container-fluid" style="background-color: rgb(130, 190, 102)">
-            <div class="row">
-                <div class="col-12 "><img class="img-fluid mx-auto d-block" src="{{ asset('assets/img/test-ad.jpg') }}" alt="..." /></div>
-            </div>   
-        </div>
-        </a> --}}
-            {{-- Push AD --}}
-        {{-- <script src="//mediapalmtree.com/v2/loader.js?_t=54278" data-ts="1628343223" data-token="3150f81d199f26a4b148c34b436b9e34928ae593" data-am="true" data-promo-cdn="mediapalmtree.com"></script> --}}
-         
-            {{-- Banner --}}
-        {{-- <div id="id_banner_affi" style="width: 768px; margin-left: auto; margin-right: auto;">Consider turning off AdBlock to support our free web-service!</div> --}}
-        
+            {{-- Banner selfmade --}}
         <a href="https://hypevpnddl.com/M3rXt5af71800a227e52cb1ede0b1ecc3563c1ccab2ca" class="text-decoration-none text-reset">
             <div class="container-fluid text-reset" style="background-color: rgb(135, 170, 118)">
                 <div class="row row-cols-auto justify-content-center">
@@ -365,12 +350,13 @@
             </div>
         </footer>
 
-        {{-- Modal --}}
-        <div class="modal fade" id="modal-terms" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+        {{-- Modal TOS --}}
+        <div class="modal fade" id="modal-terms" tabindex="-1" role="dialog" aria-labelledby="ModalTerms" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h2 class="modal-title text-center" id="ModalLabel">Terms of Use</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <p>This Site allows publishers to shorten any URL and earn income by sharing the shortened URL. 
@@ -413,10 +399,39 @@
                         </li>
                         </ol>
                     </div>
+                    <div class="modal-footer" style="border: none">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
-
+        {{-- Modal password reset --}}
+        <div class="modal fade" id="modal-resetPassword" tabindex="-1" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="ModalResetPassword" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <form method="post" action="/forgot-password">
+                        @csrf
+                        <div class="modal-header">
+                            <h2 class="modal-title text-center" id="ModalLabel">Reset password</h2>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-floating mb-3">
+                                        <input type="email" class="form-control"  name="email" id="floatingEmail" placeholder="name@example.com">
+                                        <label for="floatingEmail">Email address</label>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer" style="border: none">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
         {{-- Ad srcipts --}}
         {{-- Banner --}}
         {{-- <script src="//mediapalmtree.com/bn-script.js?t=1627242299" data-ts="1627242300" data-domain='gecontentasap.com' data-cdn-domain='mediapalmtree.com' data-promo-cdn='mediapalmtree.com' data-pl-token='1d1635376a82f4ef54e5d450cbfaa568c7c8dc5e' data-target='nw' data-freq='oncePer2Minutes' data-place-id='id_banner_affi' ></script> --}}
