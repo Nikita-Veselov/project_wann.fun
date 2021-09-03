@@ -15,6 +15,7 @@ use Stevebauman\Location\Facades\Location as Location;
 
 class LinkController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -22,10 +23,7 @@ class LinkController extends Controller
      */
     public function index()
     {
-        $ctr = new Controller;
-        $admins = $ctr->admins;
-        $linkOptions = $ctr->linkOptions;
-        return view('main', ['admins' => $admins, 'linkOptions' => $linkOptions]);
+        return view('main', ['admins' => $this->admins, 'linkOptions' => $this->linkOptions]);
     }
 
     /**
@@ -35,8 +33,8 @@ class LinkController extends Controller
      */
     public function create()
     {
-        
-        
+
+
     }
 
     /**
@@ -55,16 +53,17 @@ class LinkController extends Controller
         } else {
             $input['user_id'] = 'guest';
         }
-        
+
         if(Link::create($input)) {
             $input['input_url'] = "wann.fun/" . $input['input_url'];
-            
+
             return redirect()->action([LinkController::class, 'index'])->with([
                 'success' => 'Link created successfully!',
-                'url' => $input["input_url"]
+                'url' => $input["input_url"],
+                'linkCreated' => 'true'
             ]);
         }
-    
+
         return back()->with('error', 'Link creation error');
     }
 
@@ -110,17 +109,17 @@ class LinkController extends Controller
     public function update(UpdateLink $request, $id)
     {
         $link = Link::where('id', $id)->first();
-        
+
         Click::where('link', $link->input_url)->update(['link' => $request->input_url]);
 
         if($link->update([
-            'input_url' => $request->input_url, 
-            'output_url' => $request->output_url])) 
+            'input_url' => $request->input_url,
+            'output_url' => $request->output_url]))
             {
                 return redirect()->route('profile')
                     ->with('success', 'News edition success');
             }
-    
+
         return back()->with('error', 'News edition error');
     }
 
@@ -140,7 +139,7 @@ class LinkController extends Controller
 
     public function redirect(String $slug, Request $request) {
         if ($link = Link::where('input_url', $slug)->first()){
-            
+
             if ($geo = Location::get($request->ip())) {
                 Click::create(['link' => $link->input_url, 'ip' => $request->ip(), 'geo' => $geo->countryName]);
             } else {

@@ -31,18 +31,18 @@ Route::group(['prefix' => 'link', 'as' => 'link.'], function() {
     Route::get('/edit/{id}', [LinkController::class, 'edit'])
         ->name('edit');
     Route::get('/update/{id}', [LinkController::class, 'update'])
-        ->name('update'); 
+        ->name('update');
     Route::get('/show/{id}', [LinkController::class, 'show'])
-        ->name('show');  
+        ->name('show');
     Route::get('/getStats/{id}', [LinkController::class, 'getStats'])
-        ->name('getStats'); 
+        ->name('getStats');
 });
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [DashboardController::class, 'index'])
-    ->name('dashboard'); 
+    ->name('dashboard');
     Route::get('/profile', [UserController::class, 'index'])
-    ->name('profile');    
+    ->name('profile');
 });
 
 Route::post('/registration', [RegistrationController::class, 'store']);
@@ -51,7 +51,6 @@ Route::post('/login', [UserController::class, 'store']);
 
 Route::get('/login', [UserController::class, 'destroy']);
 
-
 Route::post('/forgot-password', [UserController::class, 'reset'])->name('password.email');
 
 Route::get('/reset-password/{token}', function ($token) {
@@ -59,13 +58,13 @@ Route::get('/reset-password/{token}', function ($token) {
 })->name('password.reset');
 
 Route::post('/reset-password', function (Request $request) {
-    
+
     $request->validate([
         'token' => 'required',
         'email' => 'required|email',
         'password' => 'required|min:6|confirmed',
     ]);
-    
+
     $status = Password::reset(
         $request->only('email', 'password', 'password_confirmation', 'token'),
 
@@ -84,7 +83,6 @@ Route::post('/reset-password', function (Request $request) {
                 ? redirect()->route('index')->with(['success' => __($status)])
                 : back()->withErrors(['email' => [__($status)]]);
 })->name('password.update');
-
 
 Route::get('/{slug}', [LinkController::class, 'redirect']);
 

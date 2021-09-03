@@ -6,7 +6,7 @@
         <meta name="author" content="Nikita-Veselov" />
         <meta name="description" content="Generate short link ideal for Dating and Nutra ad verticals. Create your own topical custom short link for your profitable ad campaign." />
         <meta name="keywords" content="url shortener, custom short url, link short, generate short link, dating offers, nutra offers" />
-        
+
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 
@@ -19,7 +19,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet" type="text/css" >
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet" />
-    
+
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-3YV643GP6L"></script>
@@ -32,7 +32,7 @@
         </script>
     </head>
     <body>
-        
+
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top navbar-gradient">
             <div class="container container-md">
@@ -43,7 +43,7 @@
                             <div class="col-12 navbar-brand-font text-center" style="font-size: 3.5rem">Wann.fun</div>
                             <div class="col-12 fs-6 fst-italic fw-bolder text-center text-black-50">Custom URL shortener for effective promotion of dating and nutra offers</div>
                         </div>
-                    </div>  
+                    </div>
 
                     {{-- Alert --}}
                     <div class="col-12 col-lg py-2 py-lg-0">
@@ -51,15 +51,13 @@
                             <div class="alert alert-warning alert-dismissible fade show mb-0 " role="alert">
                                 <strong>Sign up for full link customization and detailed statistics!</strong>
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>   
+                            </div>
                         </div>
-                    </div> 
+                    </div>
 
                     {{-- Button group --}}
                     <div class="col-12 col-lg py-2 py-lg-0">
-                        {{-- Register popover --}}    
-                
-                        <div class="d-flex justify-content-center"> 
+                        <div class="d-flex justify-content-center">
                             @if(Auth::check())
                                 {{-- Admin link --}}
                                 @if( in_array(Auth::user()->name, $admins) )
@@ -67,7 +65,7 @@
                                         <form method="get" action="/admin">
                                             <button class="btn btn-primary custom-font" type="submit">Admin</button>
                                         </form>
-                                    </div>    
+                                    </div>
                                 @endif
                                 <!-- Profile link -->
                                 <div class="px-3">
@@ -84,9 +82,9 @@
                             @else
                                 <!-- Login form -->
                                 <div class="px-3 dropdown">
-                                    <button 
-                                        class="btn btn-primary dropdown-toggle custom-font" 
-                                        data-bs-toggle="dropdown" 
+                                    <button
+                                        class="btn btn-primary dropdown-toggle custom-font"
+                                        data-bs-toggle="dropdown"
                                         aria-expanded="false"
                                         data-bs-auto-close="outside"
                                     >
@@ -106,24 +104,24 @@
                                             </div>
                                             <div class="mb-3">
                                                 <div class="form-check">
-                                                <label class="form-check-label" for="remember" >Remember me</label>   
+                                                <label class="form-check-label" for="remember" >Remember me</label>
                                                 <input type="checkbox" class="form-check-input" name="remember">
-                                                
+
                                                 </div>
                                             </div>
                                             <button type="submit" class="btn btn-primary">Log in</button>
                                         </form>
                                         <div class="dropdown-divider"></div>
-                                     
+
                                         <a href="" data-bs-toggle="modal" data-bs-target="#modal-resetPassword" class="px-3 text-reset text-decoration-none">Forgot Password?</a>
-                              
+
                                     </div>
                                 </div>
                                 <!-- Registration form -->
                                 <div class="px-3 dropdown">
-                                    <button 
-                                        class="btn btn-primary dropdown-toggle custom-font" 
-                                        data-bs-toggle="dropdown" 
+                                    <button
+                                        class="btn btn-primary dropdown-toggle custom-font"
+                                        data-bs-toggle="dropdown"
                                         aria-expanded="false"
                                         data-bs-auto-close="outside"
                                     >
@@ -157,15 +155,14 @@
                             @endif
 
                         </div>
-                    </div>  
+                    </div>
                 </div>
             </div>
         </nav>
 
         {{-- Main --}}
-        <header class="masthead" style="background: url('{{ asset('assets/img/bg-masthead.jpg') }}') no-repeat center center"> 
-            
-            <div class="container-fluid position-relative">   
+        <header class="masthead" style="background: url('{{ asset('assets/img/bg-masthead.jpg') }}') no-repeat center center">
+            <div class="container-fluid position-relative">
                 <div class="row justify-content-center">
                     <div class="col px-4 col-lg-6 px-lg-0 ">
                         <div class="text-center text-white">
@@ -185,18 +182,18 @@
                                     <div class="alert alert-danger">{{ $error }}</div>
                                 @endforeach
                             @endif
-                            
+
                             <!-- URL form-->
                             <form method="post" action="{{ route('store') }}">
                                 @csrf
 
                                 <div class="input-group">
-                                    <input 
-                                        class="form-control custom-font" 
-                                        type="text" 
-                                        placeholder="Enter your URL (e.g. https://google.com)" 
-                                        aria-label="Enter your URL (e.g. https://google.com)" 
-                                        aria-describedby="button-submit" 
+                                    <input
+                                        class="form-control custom-font"
+                                        type="text"
+                                        placeholder="Enter your URL (e.g. https://google.com)"
+                                        aria-label="Enter your URL (e.g. https://google.com)"
+                                        aria-describedby="button-submit"
                                         id="url-form"
                                         name="output_url"
                                     />
@@ -206,22 +203,22 @@
                                             <option class="custom-font">{{ $option }}</option>
                                         @endforeach
                                     </select>
-                                
-                                    <button 
-                                        class="btn btn-primary custom-font" 
-                                        type="submit" 
+
+                                    <button
+                                        class="btn btn-primary custom-font"
+                                        type="submit"
                                         {{-- onclick="copyToClipboardById('url-form')"
-                                        data-bs-toggle="tooltip" 
-                                        data-bs-placement="bottom" 
+                                        data-bs-toggle="tooltip"
+                                        data-bs-placement="bottom"
                                         title="Your new URL will be automaticaly copied to your clipboard!" --}}
                                     >
                                         Create
                                     </button>
-                                    
+
                                 </div>
-                                    
+
                                 <p>
-                                    By using the site you agree to our 
+                                    By using the site you agree to our
                                     <a href="" data-bs-toggle="modal" data-bs-target="#modal-terms" class="text-decoration-none link-info">Terms.</a>
                                 </p>
                             </form>
@@ -231,7 +228,7 @@
             </div>
         </header>
 
-        
+
         {{-- Ads --}}
             {{-- Banner selfmade --}}
         <a href="https://hypevpnddl.com/M3rXt5af71800a227e52cb1ede0b1ecc3563c1ccab2ca" class="text-decoration-none text-reset">
@@ -244,19 +241,19 @@
                         <div class="row row-cols-auto align-items-center mt-1">
                             <div class="col-12 col-sm-3 fs-2 fw-bold text-center" style="color: rebeccapurple">Best VPN</div>
                             <div class="custom-font col-12 col-sm fs-6 fw-light text-center text-break">
-                                180 Days Free! 
-                                VPN Award Winner 2021! 
+                                180 Days Free!
+                                VPN Award Winner 2021!
                                 Limited Time Offer!
                             </div>
                             <div class="col-12 col-sm-3">
-                                <button type="button" class="btn btn-success mx-auto d-block">More info</button> 
+                                <button type="button" class="btn btn-success mx-auto d-block">More info</button>
                             </div>
                         </div>
                     </div>
-                </div>   
+                </div>
             </div>
         </a>
-        
+
 
         <!-- Icons Grid-->
         <section class="features-icons bg-light text-center">
@@ -298,7 +295,7 @@
                 </div>
             </div>
         </section>
-       
+
         <!-- Testimonials-->
         <section class="testimonials text-center bg-white">
             <div class="container">
@@ -337,10 +334,10 @@
                         <ul class="list-inline mb-2">
                             <li class="list-inline-item">Email: <a href="mailto:admin@wann.fun" class="text-decoration-none link-light">admin@wann.fun </a></li>
                             <li class="list-inline-item">DMCA: <a href="mailto:dmca@wann.fun" class="text-decoration-none link-light">dmca@wann.fun </a></li>
-                            <li class="list-inline-item">Partners: 
+                            <li class="list-inline-item">Partners:
                                 <a href="https://lambushka.media" class="text-decoration-none link-light">Lambushka</a> |
                                 <a href="https://chikikliki.com" class="text-decoration-none link-light">Chikikliki</a> |
-                                <a href="https://hypevpn.org" class="text-decoration-none link-light">Hype VPN</a> 
+                                <a href="https://hypevpn.org" class="text-decoration-none link-light">Hype VPN</a>
                             </li>
                         </ul>
                         <p><a href="" data-bs-toggle="modal" data-bs-target="#modal-terms" class="text-decoration-none link-info">Terms of service</a></p>
@@ -349,6 +346,36 @@
                 </div>
             </div>
         </footer>
+
+        {{-- Modal link created --}}
+        <div class="modal fade" id="linkCreated" tabindex="-1" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="ModalLinkCreated" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <form method="post" action="">
+                        @csrf
+                        <div class="modal-header">
+                            <h2 class="modal-title text-center" id="ModalLabel">Link created</h2>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" name="link" value="{{ session()->get('url') }}">
+                                        <label for="link">Your link:</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer" style="border: none">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Copy</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
 
         {{-- Modal TOS --}}
         <div class="modal fade" id="modal-terms" tabindex="-1" role="dialog" aria-labelledby="ModalTerms" aria-hidden="true">
@@ -359,7 +386,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <p>This Site allows publishers to shorten any URL and earn income by sharing the shortened URL. 
+                        <p>This Site allows publishers to shorten any URL and earn income by sharing the shortened URL.
                             {{-- Advertising is shown to the viewer on their way to their destination URL. By using the Site's service, you agree that the Site includes advertisements on the shortened URLs which is a requirement for the Site to operate. --}}
                         </p>
                         <p>By using the Site's service, you agree&nbsp;<strong>not&nbsp;</strong>to:</p>
@@ -422,6 +449,7 @@
                                         <input type="email" class="form-control"  name="email" id="floatingEmail" placeholder="name@example.com">
                                         <label for="floatingEmail">Email address</label>
                                     </div>
+                                </div>
                             </div>
                         </div>
                         <div class="modal-footer" style="border: none">
@@ -432,17 +460,26 @@
                 </div>
             </div>
         </div>
+
         {{-- Ad srcipts --}}
         {{-- Banner --}}
         {{-- <script src="//mediapalmtree.com/bn-script.js?t=1627242299" data-ts="1627242300" data-domain='gecontentasap.com' data-cdn-domain='mediapalmtree.com' data-promo-cdn='mediapalmtree.com' data-pl-token='1d1635376a82f4ef54e5d450cbfaa568c7c8dc5e' data-target='nw' data-freq='oncePer2Minutes' data-place-id='id_banner_affi' ></script> --}}
-        
+
         {{-- Popper --}}
         <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        
+
         <script src="{{ asset('assets/vendor/jquery/jquery.js') }}"></script>
         <script src="{{ asset('assets/js/scripts.js') }}"></script>
+
+        @if(session()->has('linkCreated'))
+            <script>
+                var linkCreatedModal = new bootstrap.Modal(document.getElementById('linkCreated'));
+                linkCreatedModal.show();
+            </script>
+        @endif
+
     </body>
 </html>
