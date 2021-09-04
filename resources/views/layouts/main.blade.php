@@ -12,24 +12,8 @@
 
         <title>Free Custom URL Shortener for Dating and Nutra ads | Wann.fun</title>
 
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet" type="text/css" >
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet" />
+        @stack('styles')
 
-
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-3YV643GP6L"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-3YV643GP6L');
-        </script>
     </head>
     <body>
 
@@ -168,15 +152,11 @@
                         <div class="text-center text-white">
                             <!-- Page heading-->
                             <h1 class="custom-font mb-5">Create your new short URL!</h1>
-                            @if(session()->has('success'))
-                                <div class="alert alert-success">{{ session()->get('success') }}</div>
-                                @if(!empty(session()->get('url')))
-                                    <div class="alert alert-info">{{ session()->get('url') }}</div>
-                                @endif
-                            @endif
+
                             @if(session()->has('email'))
                                 <div class="alert alert-danger">{{ session()->get('email') }}</div>
                             @endif
+
                             @if($errors->any())
                                 @foreach ($errors->all() as $error)
                                     <div class="alert alert-danger">{{ $error }}</div>
@@ -204,16 +184,7 @@
                                         @endforeach
                                     </select>
 
-                                    <button
-                                        class="btn btn-primary custom-font"
-                                        type="submit"
-                                        {{-- onclick="copyToClipboardById('url-form')"
-                                        data-bs-toggle="tooltip"
-                                        data-bs-placement="bottom"
-                                        title="Your new URL will be automaticaly copied to your clipboard!" --}}
-                                    >
-                                        Create
-                                    </button>
+                                    <button class="btn btn-primary custom-font"type="submit">Create</button>
 
                                 </div>
 
@@ -227,7 +198,6 @@
                 </div>
             </div>
         </header>
-
 
         {{-- Ads --}}
             {{-- Banner selfmade --}}
@@ -253,7 +223,6 @@
                 </div>
             </div>
         </a>
-
 
         <!-- Icons Grid-->
         <section class="features-icons bg-light text-center">
@@ -348,7 +317,7 @@
         </footer>
 
         {{-- Modal link created --}}
-        <div class="modal fade" id="linkCreated" tabindex="-1" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="ModalLinkCreated" aria-hidden="true">
+        <div class="modal fade" id="modal-linkCreated" tabindex="-1" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="ModalLinkCreated" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <form method="post" action="">
@@ -357,25 +326,40 @@
                             <h2 class="modal-title text-center" id="ModalLabel">Link created</h2>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" name="link" value="{{ session()->get('url') }}">
-                                        <label for="link">Your link:</label>
-                                    </div>
-                                </div>
+                        <div class="modal-body mx-3">
+
+                            <label for="link">Your link:</label>
+                            <div class="input-group p-2">
+                                <input id="copyFirst" type="text" class="form-control url-form" name="link" value="{{ session()->get('url') }}">
+                                <button
+                                    data-clipboard-target="#copyFirst"
+                                    class="btn btn-primary custom-font copyBtn"
+                                    type="button"
+                                >
+                                    Copy
+                                </button>
                             </div>
-                        </div>
-                        <div class="modal-footer" style="border: none">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Copy</button>
+
+                            <label for="link2">Another option:</label>
+                            <div class="input-group p-2">
+                                <input id="copySecond" type="text" class="form-control url-form" name="link2" value="https://{{ session()->get('url') }}">
+                                <button
+                                    data-clipboard-target="#copySecond"
+                                    class="btn btn-primary custom-font copyBtn"
+                                    type="button"
+                                    data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom"
+                                    title="Tooltip on bottom"
+                                >
+                                    Copy
+                                </button>
+
+                            </div>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-
 
         {{-- Modal TOS --}}
         <div class="modal fade" id="modal-terms" tabindex="-1" role="dialog" aria-labelledby="ModalTerms" aria-hidden="true">
@@ -432,6 +416,7 @@
                 </div>
             </div>
         </div>
+
         {{-- Modal password reset --}}
         <div class="modal fade" id="modal-resetPassword" tabindex="-1" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="ModalResetPassword" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -465,21 +450,7 @@
         {{-- Banner --}}
         {{-- <script src="//mediapalmtree.com/bn-script.js?t=1627242299" data-ts="1627242300" data-domain='gecontentasap.com' data-cdn-domain='mediapalmtree.com' data-promo-cdn='mediapalmtree.com' data-pl-token='1d1635376a82f4ef54e5d450cbfaa568c7c8dc5e' data-target='nw' data-freq='oncePer2Minutes' data-place-id='id_banner_affi' ></script> --}}
 
-        {{-- Popper --}}
-        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-
-        <script src="{{ asset('assets/vendor/jquery/jquery.js') }}"></script>
-        <script src="{{ asset('assets/js/scripts.js') }}"></script>
-
-        @if(session()->has('linkCreated'))
-            <script>
-                var linkCreatedModal = new bootstrap.Modal(document.getElementById('linkCreated'));
-                linkCreatedModal.show();
-            </script>
-        @endif
+        @stack('scripts')
 
     </body>
 </html>

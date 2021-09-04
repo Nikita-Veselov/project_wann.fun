@@ -86,3 +86,5 @@ Route::post('/reset-password', function (Request $request) {
 
 Route::get('/{slug}', [LinkController::class, 'redirect']);
 
+
+
