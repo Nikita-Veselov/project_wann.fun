@@ -327,14 +327,13 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body mx-3">
-
                             <label for="link">Your link:</label>
                             <div class="input-group p-2">
                                 <input id="copyFirst" type="text" class="form-control url-form" name="link" value="{{ session()->get('url') }}">
                                 <button
-                                    data-clipboard-target="#copyFirst"
-                                    class="btn btn-primary custom-font copyBtn"
+                                    class="btn btn-primary custom-font"
                                     type="button"
+                                    data-clipboard-target="#copyFirst"
                                 >
                                     Copy
                                 </button>
@@ -344,16 +343,12 @@
                             <div class="input-group p-2">
                                 <input id="copySecond" type="text" class="form-control url-form" name="link2" value="https://{{ session()->get('url') }}">
                                 <button
-                                    data-clipboard-target="#copySecond"
-                                    class="btn btn-primary custom-font copyBtn"
+                                    class="btn btn-primary custom-font"
                                     type="button"
-                                    data-bs-toggle="tooltip"
-                                    data-bs-placement="bottom"
-                                    title="Tooltip on bottom"
+                                    data-clipboard-target="#copySecond"
                                 >
                                     Copy
                                 </button>
-
                             </div>
                         </div>
                     </form>
