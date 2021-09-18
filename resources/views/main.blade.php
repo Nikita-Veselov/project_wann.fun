@@ -192,6 +192,7 @@
             <div class="col">
                 <img class="py-auto" src="{{ asset('assets/img/AdImg/AtlasVPN/AtlasLogo.svg') }}" alt="..." style="min-width: 200px" />
             </div>
+            <div class="col-1"></div>
             <div class="col border-end border-start border-info border-5 bg-gradient" style="background: rgb(168, 188, 229)">
                 <div class="row row-cols-auto align-items-center mt-1">
                     <div class="col-12 col-lg-2 fs-1 fw-bold text-center" style="color: rgb(43, 90, 190)">Best VPN</div>
