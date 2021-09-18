@@ -294,7 +294,7 @@
                     <li class="list-inline-item">Partners:
                         <a href="https://lambushka.media" class="text-decoration-none link-light">Lambushka</a> |
                         <a href="https://chikikliki.com" class="text-decoration-none link-light">Chikikliki</a> |
-                        <a href="https://hypevpn.org" class="text-decoration-none link-light">Hype VPN</a>
+                        <a href="https://atlasvpn.com/" class="text-decoration-none link-light">Atlas VPN</a>
                     </li>
                 </ul>
                 <p><a href="" data-bs-toggle="modal" data-bs-target="#modal-terms" class="text-decoration-none link-info">Terms of service</a></p>
