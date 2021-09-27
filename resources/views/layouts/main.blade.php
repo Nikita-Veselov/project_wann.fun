@@ -34,7 +34,7 @@
         </script>
     </head>
     <body>
-
+    
         @yield('content')
 
         {{-- Scripts --}}
@@ -53,6 +53,6 @@
                 linkCreatedModal.show();
             </script>
         @endif
-
+        
     </body>
 </html>
