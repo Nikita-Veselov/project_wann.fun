@@ -197,8 +197,8 @@
                 <div class="row row-cols-auto align-items-center mt-1">
                     <div class="col-12 col-lg-2 fs-1 fw-bold text-center" style="color: rgb(43, 90, 190)">Best VPN</div>
                     <div class="col-12 col-lg-6 custom-font font-weight-light fs-5 text-center text-break">
-                        30-day money back guarantee!
-                        Limited Time Offer with 86% Off!
+                        1.39$ Per Month!
+                        Limited Time Offer With 86% Off!
                     </div>
                     <div class="col col-lg-2 mx-auto py-2">
                         <img class="img-fluid" src="{{ asset('assets/img/AdImg/AtlasVPN/AtlasRocket.png') }}" alt="..." style="max-width: 175px">
