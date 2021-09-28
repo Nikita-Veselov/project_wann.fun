@@ -32,9 +32,6 @@
 
             gtag('config', 'G-3YV643GP6L');
         </script>
-            {{-- Ads tag --}}
-        <meta name="CatCutdbe4883ce2" content="0A987E841265B2DB913587178ECD5A56Y6684" />
-
     </head>
 
     <body>
