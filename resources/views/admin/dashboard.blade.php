@@ -3,7 +3,7 @@
     integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous">
 </script>
- 
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js" integrity="sha512-5vwN8yor2fFT9pgPS9p9R7AszYaNn0LkQElTXIsZFCL7ucT8zDCAqlQXDdaqgA1mZP47hdvztBMsIoFxq/FyyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 @extends('layouts.profile')
@@ -11,12 +11,13 @@
 @section('content')
     <h1>GREAT AND GLORIOUS ADMIN PAGE!</h1>
     <div>Registered users:{{ $users->count() }}</div>
-    
+
     <div>Created links:{{ $links->count() }}</div>
     <div>All-time unique visitors:{{ $visitors->count() }}</div>
     <div>Unique visitors today:{{ $visitorsToday->count() }}</div>
     <div>All time clicks on our links:{{ $clicks->count() }}</div>
 
+    
     <div class="row">
         {{-- unique visitors chart --}}
         <div class="p-2 col-12 col-lg-6">
@@ -28,7 +29,7 @@
                         </div>
                     </div>
                 </div>
-            </div>    
+            </div>
         </div>
         {{-- Number of links by used finisher --}}
         <div class="p-2 col-6 col-lg-3">
@@ -45,11 +46,11 @@
                         <tr>
                             <td>{{ $link }}</td>
                             <td>{{ $number }}</td>
-                        </tr> 
+                        </tr>
                         @endforeach
                     @endforeach
                 </tbody>
-            </table>     
+            </table>
         </div>
         {{-- unique visitors by geo (first 15) --}}
         <div class="p-2 col-6 col-lg-3">
@@ -65,11 +66,11 @@
                         <tr>
                             <td>{{ $country }}</td>
                             <td>{{ $visitor }}</td>
-                        </tr> 
+                        </tr>
                     @endforeach
                 </tbody>
-            </table>     
+            </table>
         </div>
-    </div>  
+    </div>
 
 @endsection

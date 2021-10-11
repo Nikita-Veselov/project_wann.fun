@@ -2,8 +2,13 @@
 
 namespace App\Console;
 
+use App\Models\Link;
+use Carbon\Carbon;
+use DateTime;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Illuminate\Support\Facades\Date;
+use Symfony\Component\VarDumper\Caster\LinkStub;
 
 class Kernel extends ConsoleKernel
 {
@@ -24,7 +29,11 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->call(function () {
+            Link::where('updated_at', '<', Carbon::now()->subDays(14))
+                ->where('user_id', '=', 'guest')
+                ->delete();
+        })->daily();
     }
 
     /**

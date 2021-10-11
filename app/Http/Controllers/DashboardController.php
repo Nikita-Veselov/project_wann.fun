@@ -6,6 +6,7 @@ use App\Models\Click;
 use App\Models\Link;
 use App\Models\User;
 use App\Models\Visitor;
+use Carbon\Carbon;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -14,7 +15,7 @@ use Illuminate\Support\Str;
 class DashboardController extends Controller
 {
     public function index()
-    {   
+    {
         $ctr = new Controller;
         $admins = $ctr->admins;
         $linkOptions = $ctr->linkOptions;
@@ -32,7 +33,7 @@ class DashboardController extends Controller
 
         $linkOptionsCount = [];
         foreach ($linkOptions as $option) {
-            $count = 0;  
+            $count = 0;
             foreach ($links as $link) {
                 if (Str::contains($link->input_url, $option)) {
                     $count++;
@@ -42,6 +43,8 @@ class DashboardController extends Controller
         }
         $linkOptionsCount = collect($linkOptionsCount);
 
+
+
         foreach ($visitorsChart as $data)
         {
             array_push($chart_data, array($data->date->format('d.m.Y'), $data->total));
@@ -49,20 +52,20 @@ class DashboardController extends Controller
 
         if (in_array(Auth::user()->name, $admins)) {
             return view('admin.dashboard', compact([
-                'chart_data', 
-                'links', 
-                'users', 
-                'visitors', 
-                'visitorsToday', 
+                'chart_data',
+                'links',
+                'users',
+                'visitors',
+                'visitorsToday',
                 'visitorsCount',
                 'visitorsChart',
                 'clicks',
                 'linkOptionsCount'
-            ]));    
+            ]));
         } else {
-           return redirect()->to('/'); 
+           return redirect()->to('/');
         }
 
-        
+
     }
 }
