@@ -15,14 +15,16 @@
             </div>
 
             {{-- Alert --}}
-            <div class="col-12 col-lg py-2 py-lg-0">
-                <div class="row ">
-                    <div class="alert alert-warning alert-dismissible fade show mb-0 " role="alert">
-                        <strong>Sign up for full link customization and detailed statistics!</strong>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            @if (session('navAlert') != 'close')
+                <div class="col-12 col-lg py-2 py-lg-0">
+                    <div class="row ">
+                        <div class="alert alert-warning alert-dismissible fade show mb-0 " role="alert">
+                            <strong>Sign up for full link customization and detailed statistics!</strong>
+                            <a class="btn-close" href="{{ session()->put('navAlert', 'close'); }}" role="button" data-bs-dismiss="alert" aria-label="Close"></a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endif
 
             {{-- Button group --}}
             <div class="col-12 col-lg py-2 py-lg-0">
@@ -133,7 +135,7 @@
 <header class="masthead" style="background: url('{{ asset('assets/img/bg-masthead.jpg') }}') no-repeat center center">
     <div class="container-fluid position-relative">
         <div class="row justify-content-center">
-            <div class="col px-4 col-lg-6 px-lg-0 ">
+            <div class="col px-4 col-lg-8 px-lg-0 ">
                 <div class="text-center text-white">
                     <!-- Page heading-->
                     <h1 class="custom-font mb-5">Create your new short URL!</h1>
@@ -156,8 +158,8 @@
                             <input
                                 class="form-control custom-font"
                                 type="text"
-                                placeholder="Enter your URL (e.g. https://google.com)"
-                                aria-label="Enter your URL (e.g. https://google.com)"
+                                placeholder="Enter your URL (e.g. https://google.com) and choose ending =>"
+                                aria-label="Enter your URL"
                                 aria-describedby="button-submit"
                                 id="url-form"
                                 name="output_url"
@@ -182,6 +184,22 @@
             </div>
         </div>
     </div>
+    {{-- Announcment --}}
+    <div class="container-fluid position-relative h-50">
+            {{-- Alert --}}
+        <div class="row justify-content-center">
+            <div class="col-6 p-4 mt-4">
+                <div class="row">
+                    <div class="alert alert-info alert-dismissible fade show mb-0 text-center" role="alert">
+                        <div>Don't forget to register or sign in to have unlimited link lifespan! </div>
+                        <div>2 weeks lifespan for unregistered users!</div>
+                        {{-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> --}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </header>
 
 {{-- Ads --}}
