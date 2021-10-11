@@ -10,14 +10,13 @@
 
 @section('content')
     <h1>GREAT AND GLORIOUS ADMIN PAGE!</h1>
-    <div>Registered users:{{ $users->count() }}</div>
 
-    <div>Created links:{{ $links->count() }}</div>
+    <div>Registered users:{{ $users->count() }}</div>
+    <div>Current alive links:{{ $links->count() }}</div>
     <div>All-time unique visitors:{{ $visitors->count() }}</div>
     <div>Unique visitors today:{{ $visitorsToday->count() }}</div>
     <div>All time clicks on our links:{{ $clicks->count() }}</div>
 
-    
     <div class="row">
         {{-- unique visitors chart --}}
         <div class="p-2 col-12 col-lg-6">
@@ -58,7 +57,7 @@
                 <thead>
                     <tr>
                         <th>Geo Mark</th>
-                        <th>Number of Visitors</th>
+                        <th>Visitors</th>
                     </tr>
                 </thead>
                 <tbody>
