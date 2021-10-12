@@ -30,12 +30,12 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        Log::info("Working");
-        // $schedule->call(function () {
-        //     Link::where('updated_at', '<', Carbon::now()->subDays(14))
-        //         ->where('user_id', '=', 'guest')
-        //         ->delete();
-        // })->daily();
+        // Log::info("Working");
+        $schedule->call(function () {
+            Link::where('updated_at', '<', Carbon::now()->subDays(14))
+                ->where('user_id', '=', 'guest')
+                ->delete();
+        })->daily();
     }
 
     /**
