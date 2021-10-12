@@ -30,7 +30,7 @@ class Kernel extends ConsoleKernel
             Link::where('updated_at', '<', Carbon::now()->subDays(14))
                 ->where('user_id', '=', 'guest')
                 ->delete();
-        })->everyFiveMinutes();
+        })->daily();
     }
 
     /**
